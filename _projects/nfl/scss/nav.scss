@@ -1,0 +1,35 @@
+#nav {
+    width: 100%;
+    display: block;
+    margin: 0;
+
+    .menu {
+
+        list-style: none;
+        width: auto;
+		border-bottom: 5px solid #D50A0A;
+		margin: 0;
+        padding: 0;
+        height: auto;
+        display: flex;
+        justify-content: center;
+		background-color: #013369;
+
+        li {
+			float: left;
+
+            a {
+                padding: 15px 20px;
+                text-decoration: none;
+                display: block;
+                color: #fff;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+            }
+
+            a:hover {
+                background-color: #fff;
+                color: grey;
+            }
+        }
+    }
+}

@@ -1,0 +1,63 @@
+@import './_fonts.scss';
+
+$font: Verdana, Geneva, Tahoma, sans-serif;
+$titleFont: 'Freshman';
+$nflBlue: #013369;
+$nflRed: #D50A0A;
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  font-family: $font;
+}
+
+html, body, #container, #div {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+	max-width: 1000px;
+	margin: 0 auto;
+}
+
+#head {
+	background-color: $nflBlue;
+	width: 100%;
+	border-bottom: 5px solid $nflRed;
+	text-align: center;
+	padding: 10px 20px;
+
+	& h1 {
+		font-family: $titleFont;
+		font-weight: normal;
+		font-size: 24px;
+		text-align: center;
+		margin: 0 auto;
+		color: #fff;
+		letter-spacing: 2px;
+		line-height: 34px;
+	}
+}
+
+#footer {
+	background-color: $nflBlue;
+	width: 100%;
+	border-top: 5px solid $nflRed;
+	text-align: center;
+	padding: 10px 20px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+
+	& .foot {
+		margin: 5px 20px;
+		color: #fff;
+		font-family: $font;
+
+		& a {
+			color: #fff;
+			font-family: $font;
+		}
+
+	}
+}

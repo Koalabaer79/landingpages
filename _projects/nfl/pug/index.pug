@@ -1,0 +1,21 @@
+doctype html
+html(lang="de")
+	head
+		meta(charset="utf-8")
+		title Landing Page
+		meta(name="description",content="Add description here")
+		meta(name="keywords",content="Add, keywords, here")
+		meta(name="viewport",content="width=device-width, initial-scale=1")
+		link(href="./css/index.css",rel="stylesheet",type="text/css")
+		link(href="./css/nav.css",rel="stylesheet",type="text/css")
+	body(id="body")
+		.container
+			include ./_shared/_menu.pug
+
+			#head
+				h1 Inofficial NFL Website
+				p.subLine by Lars Urban
+			.subCont
+				p Das ist eine inoffizielle Webseite zur Darstellung von Teams, Tabelle und Spielplänen. Realisiert mit Javascript.
+
+			include ./_shared/_footer.pug

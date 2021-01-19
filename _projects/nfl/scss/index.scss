@@ -1,0 +1,14 @@
+@import './_shared/_shared.scss';
+
+.subLine {
+	font-family: $font;
+	font-size: 20px;
+	font-weight: bold;
+	color: #fff;
+	line-height: 20px;
+	margin: 10px 0;
+}
+
+.subCont {
+	margin: 20px;
+}

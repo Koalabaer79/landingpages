@@ -1,0 +1,146 @@
+doctype html
+html(lang="de")
+	head
+		meta(charset="utf-8")
+		title NFL Teams
+		meta(name="description",content="Add description here")
+		meta(name="keywords",content="Add, keywords, here")
+		meta(name="viewport",content="width=device-width, initial-scale=1")
+		link(href="./css/teams.css",rel="stylesheet",type="text/css")
+		link(href="./css/nav.css",rel="stylesheet",type="text/css")
+		script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js")
+		script(src="./js/teams.js")
+	body(id="body")
+		
+		.container
+			include ./_shared/_menu.pug
+			#head
+				h1 NFL Tabelle
+				div.custom-select
+					select#year
+
+			#subNav(onclick="showAll()") Unfold all
+
+			div.titleCont(onclick="showTable('afcEast','arrow1')")
+				h2 AFC East
+				img#arrowafcEast.arrow(src="./assets/icons/arrow.svg")
+			div#afcEast.tableDiv
+				table(id="afc_east")
+					tr.teamsHead
+						td.headListed(colspan="2") Mannschaft
+						td.data Sp
+						td.data S
+						td.data N
+						td.data U
+						td.data %
+						td.data P
+						td.data GP
+
+			div.titleCont(onclick="showTable('afcWest')")
+				h2 AFC West
+				img#arrowafcWest.arrow(src="./assets/icons/arrow.svg")
+			div#afcWest.tableDiv
+				table(id="afc_west")
+					tr.teamsHead
+						td.headListed(colspan="2") Mannschaft
+						td.data Sp
+						td.data S
+						td.data N
+						td.data U
+						td.data %
+						td.data P
+						td.data GP
+		
+			div.titleCont(onclick="showTable('afcNorth')")
+				h2 AFC north
+				img#arrowafcNorth.arrow(src="./assets/icons/arrow.svg")
+			div#afcNorth.tableDiv
+				table(id="afc_north")
+					tr.teamsHead
+						td.headListed(colspan="2") Mannschaft
+						td.data Sp
+						td.data S
+						td.data N
+						td.data U
+						td.data %
+						td.data P
+						td.data GP		
+		
+			div.titleCont(onclick="showTable('afcSouth')")
+				h2 AFC South
+				img#arrowafcSouth.arrow(src="./assets/icons/arrow.svg")
+			div#afcSouth.tableDiv
+				table(id="afc_south")
+					tr.teamsHead
+						td.headListed(colspan="2") Mannschaft
+						td.data Sp
+						td.data S
+						td.data N
+						td.data U
+						td.data %
+						td.data P
+						td.data GP
+		
+			div.titleCont(onclick="showTable('nfcEast')")
+				h2 NFC East
+				img#arrownfcEast.arrow(src="./assets/icons/arrow.svg")
+			div#nfcEast.tableDiv
+				table(id="nfc_east")
+					tr#nfcEast.teamsHead
+						td.headListed(colspan="2") Mannschaft
+						td.data Sp
+						td.data S
+						td.data N
+						td.data U
+						td.data %
+						td.data P
+						td.data GP
+		
+			div.titleCont(onclick="showTable('nfcWest')")
+				h2 NFC West
+				img#arrownfcWest.arrow(src="./assets/icons/arrow.svg")
+			div#nfcWest.tableDiv
+				table(id="nfc_west")
+					tr#nfcWest.teamsHead
+						td.headListed(colspan="2") Mannschaft
+						td.data Sp
+						td.data S
+						td.data N
+						td.data U
+						td.data %
+						td.data P
+						td.data GP
+		
+			div.titleCont(onclick="showTable('nfcNorth')")
+				h2 NFC North
+				img#arrownfcNorth.arrow(src="./assets/icons/arrow.svg")
+			div#nfcNorth.tableDiv
+				table(id="nfc_north")
+					tr.teamsHead
+						td.headListed(colspan="2") Mannschaft
+						td.data Sp
+						td.data S
+						td.data N
+						td.data U
+						td.data %
+						td.data P
+						td.data GP
+		
+			div.titleCont(onclick="showTable('nfcSouth')")
+				h2 NFC South
+				img#arrownfcSouth.arrow(src="./assets/icons/arrow.svg")
+			div#nfcSouth.tableDiv
+				table(id="nfc_south")
+					tr.teamsHead
+						td.headListed(colspan="2") Mannschaft
+						td.data Sp
+						td.data S
+						td.data N
+						td.data U
+						td.data %
+						td.data P
+						td.data GP
+
+			include ./_shared/_footer.pug
+
+	script(src="./js/select.js")

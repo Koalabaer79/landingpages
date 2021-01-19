@@ -1,0 +1,179 @@
+$font: Verdana, Geneva, Tahoma, sans-serif;
+$color_1: red;
+$color_2: green;
+$color_3: #00A0FF;
+$width_1: 300px;
+$cirle_1: 50px;
+$time: .5s;
+
+html, body, #container, #div {
+    margin: 0;
+    padding: 0;
+}
+  
+#container {
+    max-width: 1280px;
+    margin: 0 auto;
+    position: relative;
+    text-align: center;
+}
+
+#header {
+    width: 100%;
+    text-align: center;
+
+    h1 {
+        font-size: 30px;
+        text-align: center;
+    }
+}
+
+.slide {
+    position: relative;
+    float: left;
+    margin: 20px 10px;
+    .black_1, .black_2, .black_3 {
+        width: $cirle_1;
+        height: $cirle_1 - 4px;
+        border-top: 2px solid;
+        border-bottom: 2px solid;
+        background-color: black;
+        display: block;
+        position: relative;
+        border-radius: $cirle_1 / 2;
+        float: left;
+        z-index: 0;
+        overflow: hidden;
+    }
+    .black_1 {
+        transition: width $time;
+    }
+    .black_2 {
+        transition: width $time, height $time;
+    }
+    .black_3 {
+        transition: width $time $time, height $time;
+    }
+
+    .color {
+        width: $cirle_1;
+        height: $cirle_1;
+        left: 0;
+        border-radius: $cirle_1 / 2;
+        position: absolute;
+        z-index: 1;
+    }
+    .color_move_1, .color_move_2 {
+        width: $cirle_1;
+        height: $cirle_1;
+        position: relative;
+        display: block;
+        left: 0;
+        border-radius: 25px;
+        z-index: 2;
+    }
+
+    .color_move_1 {
+        transition: transform $time, left $time;
+    }
+    .color_move_2 {
+        transition: transform $time, left $time;
+        transition-delay: $time;
+    }
+
+    .bg_1 {
+        background-color: $color_1;
+    }
+    .bg_2 {
+        background-color: $color_2;
+    }
+    .bg_3 {
+        background-color: $color_3;
+    }
+    
+    .border_1 {
+        border-color: $color_1;
+    }
+    .border_2 {
+        border-color: $color_2;
+    }
+    .border_3 {
+        border-color: $color_3;
+    }
+
+   .num {
+        color: white;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        font-family: $font;
+    }
+
+    .text {
+        color: white;
+        position: absolute;
+        top: 50%;
+        text-align: center;
+        width: calc(100% - 40px);
+        transform: translateY(-50%);
+        font-family: $font;
+        padding: 20px;
+        overflow: hidden;
+        opacity: 0;
+        transition: all $time;
+    }
+
+    &:hover .text {
+        opacity: 1;
+        transition: all $time $time;
+    }
+
+    &:hover > .black_1 {
+        width: $width_1;
+    }
+    &:hover > .black_3 {
+        width: $width_1;
+        height: 300px;
+        transition: width $time, height $time $time;
+    }
+    &:hover > .black_2 {
+        width: $width_1;
+        height: 300px;
+    }
+
+    &:hover > .color_move_1 {
+        transform: rotate(360deg);
+        left: $width_1 - $cirle_1;
+    }
+    &:hover > .color_move_2 {
+        transform: rotate(360deg);
+        left: $width_1 - $cirle_1;
+        transition: transform $time, left $time;
+    }
+}
+
+h1, h2, h3, p {
+    font-family: $font;
+    width: 100%;
+}
+
+h2 {
+    font-size: 20px;
+}
+
+h3 {
+    font-size: 18px;
+    margin: 20px 0;
+}
+
+p {
+    margin: 20px 0;
+}
+
+#content {
+    margin: 20px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}

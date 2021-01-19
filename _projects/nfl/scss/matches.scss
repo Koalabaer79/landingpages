@@ -1,0 +1,75 @@
+@import './_shared/_shared.scss';
+@import './_shared/_select.scss';
+
+h2 {
+	font-family: $font;
+	font-size: 18px;
+	line-height: 20px;
+	margin: 20px auto 10px auto;
+	text-align: center;
+	padding: 10px;
+	width: 100%;
+}
+
+#playtable {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+}
+
+.week {
+	width: 100%;
+}
+
+.match {
+	display: flex;
+	width: 300px;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+	color: #767676;
+	font-family: $font;
+	border: 1px solid #C6C6C6;
+	margin: 0 10px 20px 10px;
+
+	& .full {
+		width: calc(100% - 10px);
+		text-align: right;
+		padding: 5px;
+		font-size: 14px;
+	}
+
+	& .half {
+		width: calc(50% - 40px);
+		text-align: center;
+		padding: 5px;
+
+		& img {
+			width: 60px;
+		}
+
+		&.standings {
+			font-family: $font;
+			font-size: 24px;
+		}
+
+		&.team {
+			cursor: pointer;
+			&:hover {
+				background-color: #F6F6F6;
+			}
+		}
+	}
+
+	& .at {
+		width: 30px;
+		font-size: 20px;
+		text-align: center;
+	}
+}

@@ -1,0 +1,78 @@
+[
+	[
+		{
+			"date": "11.9.20",
+			"time": "18:00",
+			"visitor": {
+				"team": "chiefs",
+				"points": [ "3","17","7","10" ]
+			},
+			"home": {
+				"team": "texans",
+				"points": [ "7","7","7","13" ]
+			}
+		},
+		{
+			"date": "13.9.20",
+			"time": "18:00",
+			"visitor": {
+				"team": "washington",
+				"points": [ "0","7","3","13" ]
+			},
+			"home": {
+				"team": "eagles",
+				"points": [ "10","7","13","0" ]
+			}
+		},
+		{
+			"date": "14.9.20",
+			"time": "18:00",
+			"visitor": {
+				"team": "browns",
+				"points": [ "0","0","7","13" ]
+			},
+			"home": {
+				"team": "bills",
+				"points": [ "10","7","21","0" ]
+			}
+		}
+	],
+	[
+		{
+			"date": "18.9.20",
+			"time": "22:00",
+			"visitor": {
+				"team": "saints",
+				"points": [ "0","17","7","10" ]
+			},
+			"home": {
+				"team": "broncos",
+				"points": [ "7","0","0","13" ]
+			}
+		},
+		{
+			"date": "19.9.20",
+			"time": "22:00",
+			"visitor": {
+				"team": "bears",
+				"points": [ "0","7","7","13" ]
+			},
+			"home": {
+				"team": "dolphins",
+				"points": [ "10","7","0","0" ]
+			}
+		},
+		{
+			"date": "20.9.20",
+			"time": "22:00",
+			"visitor": {
+				"team": "chargers",
+				"points": [ "0","14","7","13" ]
+			},
+			"home": {
+				"team": "buccaneers",
+				"points": [ "10","23","0","0" ]
+			}
+		}
+	]
+]

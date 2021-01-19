@@ -1,0 +1,124 @@
+doctype html
+html(lang="de")
+    head
+        meta(charset="utf-8")
+        title Landing Page Compiler
+        meta(name="description",content="Landing Page Compiler by Lars Urban for easy LP Programming with PUG, SCSS, GULP and NODEJS - create your fast Landing Pages here")
+        meta(name="keywords",content="landing, page, compiler, easy, lp, programming, landing page")
+        meta(name="viewport",content="width=device-width, initial-scale=1")
+        link(href="./css/style.css",rel="stylesheet",type="text/css")
+        link(href="https://fonts.googleapis.com/css2?family=Yantramanav:wght@400;700&display=swap" rel="stylesheet" async)
+    body#body
+
+        div#background(onClick="stop()")
+            div#stopIntro Click to stop Intro
+            div#text1
+                .titleText Lars Urban presents
+            div#text2
+                .titleText Landing Page Compiler
+            div#text3
+                .titleText Easy LP Programming!
+
+        div#container            
+            include ./_shared/menu.pug
+
+            #header
+                div.gradient
+                img.headerImg(src="./assets/header.jpg" alt="Light gulp with world - The Idea of a Landing page compiler")
+                h1 Landing Page Compiler
+                div.gradient_2
+                #arrow1.arrow_down
+                    img.arrow(src="./assets/icons/arrow_white.png" alt="arrow down 1")
+
+            #content
+
+                #description.text_container
+                    .text.white
+                        h2 Description of Landing Page Compiler
+                        p The "landing page compiler" is designed to easily programm landing pages or small websites. With Gulp, nodeJS you generate your programmed page and create a fully inline code in just one file. The pure SEO is working perfekt on this site and makes it slim, fast and efficient.
+                        p This small compiler is not build for big and complex websites, which will exceed the functionality. I kept the system simple and fast, for efficient and direct programming of landing-pages.
+                        p You need to have knowledge about SCSS, PUG, and using the terminal to use the Gulp- and node-commands for easy and fast programming.
+                        p It is possible to include JS files, which will also be implemented inline together with CSS in the final HTML code. To keep it fast, it is possible to include Base64 fonts and keep the amount of all uneccessary external links as small as possible.
+                    .icons
+                        #arrow2.arrow_down
+                            img.arrow(src="./assets/icons/arrow_white.png" alt="arrow down 2")
+                
+                #mid1.middleSection.blue
+                    .textCenter
+                        h2.blue Libraries and toolkits LPC uses
+                        p.blue Click on one of the icons to find out more about each topic. You can also find learning material if neccessary and not already known.
+                    .imgIns
+                        a(href="https://www.pugjs.org/" target="_blank" rel="noreferrer noopener")
+                            img(src="./assets/icons/pug.jpg" alt="pug logo")
+                    .imgIns
+                        a(href="https://sass-lang.com/" target="_blank" rel="noreferrer noopener")
+                            img(src="./assets/icons/sass.jpg" alt="sass logo")
+                    .imgIns
+                        a(href="https://gulpjs.com/" target="_blank" rel="noreferrer noopener")
+                            img(src="./assets/icons/gulp.jpg" alt="gulp logo")
+                    .imgIns
+                        a(href="https://nodejs.org/" target="_blank" rel="noreferrer noopener")
+                            img(src="./assets/icons/node.jpg" alt="nodejs logo")
+                    #arrow3.arrow_div
+                        img.arrow(src="./assets/icons/arrow_white.png" alt="arrow down 3")
+
+                #features.text_container
+                    .icons
+                        #arrow4.arrow_down
+                            img.arrow(src="./assets/icons/arrow_white.png" alt="arrow down 4")
+                    .text.white
+                        h2 Features of Landing Page Compiler
+                        h3 PUG Files
+                        p For easy programming this compiler uses PUG files
+                        h3 SCSS
+                        p This landing page compiler uses SCSS stylesheets to enable functions and variables for layouting
+                        h3 Gulp
+                        p With the gulpfile.js it is possible to create new projects, watch and compile PUG files as well as SCSS files
+                        h3 nodeJS
+                        p To export your projects this compiler uses nodeJS to create inline HTML files with all style and js included
+                        h3 Templates
+                        p Use your own templates to use them for new projects
+                
+                #mid2.middleSection.blue
+                    .textCenter
+                        #download
+                            a.download(href="https://github.com/Koalabaer79/lp_compiler" title="Download it from GitHub" target="_blank" rel="noopener noreferrer") Download the Landing Page Compiler
+                        #arrow5.arrow_div
+                            img.arrow(src="./assets/icons/arrow_white.png" alt="arrow down 5")
+                        
+                #commands.text_container
+                    .text.white
+                        h2 Commands to control the Landing Page Compiler
+                        h3 Getting Started with
+                        p.code npm install
+                        p To ensure that you have all neccessary tools
+
+                        h3 Gulp Commands
+                        p.code gulp new --project <span class="file">test1</span>
+                        p Create new Project with _default template. You need to be in the "_projects" directory
+
+                        p.code gulp new --project <span class="file">test1</span> --template <span class="file">xyz</span>
+                        p Create new Project with defined template (name of folder) from "templates" directory
+
+                        p.code gulp watch
+                        p Compiling your files into the "_dist" folder and watch "index.html" life in browser
+
+                        p.code gulp watch --file <span class="file">xyz.html</span>
+                        p Compiling all files from project into the "_dist" directory and watch specified "xyz.html"<br />xyz.html --> full path of html file required
+
+                        h3 nodeJS Commands
+                        p.code node bakery.js --project <span class="file">test1</span>
+                        p Export desired project and create inline HTML code including all CSS code, JS code and images in a timestamped "_export" directory.<br />Copy the complete path of project directory "lp-compiler" (for example)</i>
+
+                        h3 PUG files
+                        p I've created the "index.pug", which will be compiled into "index.html". You can add an individual PUG file (f.e. "test.pug") in the same folder as "index.pug" and it will be compiled into "test.html".
+                        p The folder "_shared" includes the menu and footer pug-file, which can be included in your individual PUG files and you only need to change the menu once, as it is implemented in all parent files.
+
+                        h3 SCSS files
+                        p I only have one SCSS file, which is included in the pug-file. You can feel free to add more SCSS files, maybe in a separate folder, and import them into your "style.scss". Then it will be included automatically inline in your exported HTML file.
+                    
+                    .icons
+            
+            include ./_shared/footer.pug
+
+    script(src="./js/scripts.js")

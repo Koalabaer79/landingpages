@@ -1,0 +1,24 @@
+{
+  "name": "lp_compiler",
+  "version": "1.0.0",
+  "description": "Gulp Compiler for Landingpage - with Pug, Sass and Templates",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "browser-sync": "^2.26.7",
+    "colors": "^1.4.0",
+    "gulp": "^4.0.2",
+    "gulp-minify": "^3.1.0",
+    "gulp-pug": "^4.0.1",
+    "gulp-sass": "^4.1.0",
+    "tinify": "^1.6.0-beta.2"
+  },
+  "devDependencies": {
+    "gulp-minify": "^3.1.0",
+    "tinify": "*"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Lars Urban",
+  "license": "ISC"
+}

@@ -1,0 +1,1 @@
+console.log("Welcome to the Landingpage Compiler!");const locations=["parallax","matrix"],domain=document.location;var url=domain.href,active=!1;document.addEventListener("DOMContentLoaded",function(e){locations.forEach(e=>{!0===url.includes(e)&&(document.getElementById(e).classList.add("active"),active=!0)}),0==active&&document.getElementById("home").classList.add("active")});

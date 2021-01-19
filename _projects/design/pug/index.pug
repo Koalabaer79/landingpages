@@ -1,0 +1,156 @@
+doctype html
+html(lang="de")
+    head
+        meta(charset="utf-8")
+        title Lars Urban Design Project - Self-presentation of a Frontend-Developer
+        meta(name="description",content="Lars Urban - Design Project from a frontend-developer. Self-presentation and showing personal profile to present programming skills.")
+        meta(name="keywords",content="Lars, Urban, design, project, self, presentation, profile, visitenkarte")
+        meta(name="viewport",content="width=device-width, initial-scale=1")
+        link(href="./css/style.css",rel="stylesheet",type="text/css")
+        link(href="https://fonts.googleapis.com/css2?family=Exo+2:wght@200;400;600;800&display=swap" rel="stylesheet")
+        link(rel="icon" type="image/png" sizes="32x32" href="./assets/img/favicon-32x32.png")
+        link(rel="icon" type="image/png" sizes="96x96" href="./assets/img/favicon-96x96.png")
+        link(rel="icon" type="image/png" sizes="16x16" href="./assets/img/favicon-16x16.png")
+    body(id="body")
+
+        include ./_shared/menu.pug
+
+        .scrollIcon(title="Scroll one to switch between pages")
+            .scroller
+
+        #container
+
+            #container0
+                #logo(onclick="goTo('https://www.u-php.de')")
+                    img#arrows.hidden(src="./assets/img/arrows.png")
+                    img#ring1.absolute(src="./assets/img/ring1.png")
+                    img#ring2.absolute(src="./assets/img/ring2.png")
+                    img#ring3.absolute(src="./assets/img/ring3.png")
+                    img#balken.absolute(src="./assets/img/balken.png")
+                    img#lars.absolute.hidden(src="./assets/img/lars.png")
+                    img#frontend.absolute.hidden(src="./assets/img/frontend.png")
+                    img#developer.absolute.hidden(src="./assets/img/developer.png")
+            #section1.section            
+                #content1
+                    h1 Lars Urban
+                    p.subTitle Frontend-Developer
+                    .exp
+                        .borderTop
+                        .borderBottom
+                        .ico_cont
+                            .ico_l(onmouseover="colorRed('exp')" onmouseout="colorWhite('exp')")
+                                svg(version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                    viewBox="0 0 50 50" style="enable-background:new 0 0 50 50;" xml:space="preserve")
+                                    g
+                                        circle(class="st2" cx="24.22" cy="19.48" r="4.71")
+                                        path(class="st2" d="M32.26,32.4v-3.97c0-1.78-1.94-3.22-4.33-3.22h-7.42c-2.39,0-4.33,1.44-4.33,3.22v3.97H32.26z")
+                                    g
+                                        circle(class="st3" cx="24.22" cy="24.29" r="20.93")
+
+                                    circle(class="st2" cx="6.38" cy="13.31" r="2.75")
+                                    path(class="st2" d="M41.6,17.51h3.94c0.43,0,0.77-0.35,0.77-0.77V12.8c0-0.43-0.35-0.77-0.77-0.77H41.6 c-0.43,0-0.77,0.35-0.77,0.77v3.94C40.82,17.16,41.17,17.51,41.6,17.51z")
+                                    circle(class="st2" cx="22.95" cy="45.22" r="2.75")
+                                    circle(class="st3" cx="24.22" cy="24.29" r="15.87")
+                                    path(class="st2" d="M6.98,31.68h3.94c0.43,0,0.77-0.35,0.77-0.77v-3.94c0-0.43-0.35-0.77-0.77-0.77H6.98 c-0.43,0-0.77,0.35-0.77,0.77v3.94C6.21,31.33,6.55,31.68,6.98,31.68z")
+                                    circle(class="st2" cx="27.36" cy="8.75" r="2.75")
+                                    path(class="st2" d="M36.78,33.37h3.94c0.43,0,0.77-0.35,0.77-0.77v-3.94c0-0.43-0.35-0.77-0.77-0.77h-3.94 c-0.43,0-0.77,0.35-0.77,0.77v3.94C36.01,33.03,36.36,33.37,36.78,33.37z")
+                            div.textExp
+                                .left Experience:<br /><span id="exp"></span>
+                        .ico_cont
+                            div.textExp
+                                .right Working-Experience:<br /><span id="work"></span>
+                            .ico_r(onmouseover="colorRed('work')" onmouseout="colorWhite('work')")
+                                svg(version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                    viewBox="0 0 50 50" style="enable-background:new 0 0 50 50;" xml:space="preserve")
+                                    g
+                                        circle(class="st0" cx="25" cy="25" r="15.87")
+                                        g
+                                            circle(class="st0" cx="25" cy="25" r="20.93")
+                                        
+                                        line(class="st0" x1="25" y1="11.28" x2="25" y2="25")
+                                        line(class="st0" x1="17.37" y1="30.58" x2="25" y2="25")
+                                        circle(class="st1" cx="25" cy="25" r="3.14")
+            #section2.section
+                #content2
+                    .textCont
+                        .borderTop
+                        .borderBottom
+                        .text
+                            h2 Lars Urban - Profile
+                            p My name is Lars Urban. I am <span id="age"></span> years old and I live in Hamburg / Germany. My passion is web-development and I am skilled in all directions. Mainly experienced in frontend but also with backend skills with PHP.
+                            p I studied to become a salesman but never lost my passion to webdesign, which started already in 1996. I always wanted to work in the web-development banch. In 2018 I made the lateral entry possible and since then I work fully as a frontend-developer.
+            #section3.section
+                #content2
+                    .textCont
+                        .borderTop
+                        .borderBottom
+                        .text2
+                            h2 My skills
+                            .skills
+                                .bold Expert
+                                .skill(onmouseover="showSkill('html','100%')" onmouseout="showSkill('html','')") HTML <span id="html"></span>
+                                .skill(onmouseover="showSkill('css','95%')" onmouseout="showSkill('css','')") CSS3 <span id="css"></span>
+                            .skills
+                                .bold Advanced
+                                .skill(onmouseover="showSkill('java','80%')" onmouseout="showSkill('java','')") Javascript <span id="java"></span>
+                                .skill(onmouseover="showSkill('pug','75%')" onmouseout="showSkill('pug','')") PUG, GULP, nodeJS <span id="pug"></span>
+                            .skills
+                                .bold Intermediate
+                                .skill(onmouseover="showSkill('php','70%')" onmouseout="showSkill('php','')") PHP, MySQL <span id="php"></span>
+                                .skill(onmouseover="showSkill('ani','65%')" onmouseout="showSkill('ani','')") Animations <span id="ani"></span>
+                                .skill(onmouseover="showSkill('seo','70%')" onmouseout="showSkill('seo','')") SEO <span id="seo"></span>
+                            .skills
+                                .bold Novice
+                                .skill(onmouseover="showSkill('type','30%')" onmouseout="showSkill('type','')") TypeScript <span id="type"></span>
+                                .skill(onmouseover="showSkill('react','30%')" onmouseout="showSkill('react','')") React <span id="react"></span>
+            #section4.section
+                #content2
+                    .textCont
+                        .borderTop
+                        .borderBottom
+                        .text2
+                            h2 Projects of Lars Urban
+                            p I work fulltime as a frontend-developer for a worldwide operating company, settled in the advertising production. I am mainly working on digital adverts as banners and landing pages. But also developing content for magento managed pages, tool-development and creative tasks land on my desk.
+                            p You will also find several other projects on my website. Just click on the top-left seated logo.
+                            .skills
+                                .bold Own developed CMS
+                                .project
+                                    a(href="https://www.parkenflughafenhamburg24.de" target="_blank" rel="noopener noreferrer") parkenflughafenhamburg24
+                                .project
+                                    a(href="https://www.schuldnerberatungdortmund.de" target="_blank" rel="noopener noreferrer") schuldnerberatungdortmund                      
+                            .skills
+                                .bold Several Projects
+                                .project
+                                    a(href="https://www.u-php.de/js-coding/big-cities/index.html" target="_blank" rel="noopener noreferrer") Dynamic JS Website
+                                .project
+                                    a(href="https://www.netzspider.de/features.php" target="_blank" rel="noopener noreferrer") PHP Features
+            #section5.section
+                #content2
+                    .textCont
+                        .borderTop
+                        .borderBottom
+                        .text2
+                            h2 Contact Lars Urban
+                            form#contactform(name="contactform" onsubmit="return validateForm()" action="assets/sendEmail.php")
+                                .form_div
+                                    span#infoField
+                                    span#success
+                                .form_div 
+                                    label.label Name
+                                    input#name(name="name" type="text" placeholder="What's your name?")
+                                .form_div
+                                    label.label Email
+                                    input#email(name="email" type="email" placeholder="Leave your email address!")
+                                .form_div 
+                                    label.label Message
+                                    textarea#message(placeholder="Insert you message here.")
+                                .form_div
+                                    input#confirm(name="confirm" type="checkbox")
+                                    label(for="confirm")
+                                        span#check
+                                    div I accept that my data sent is used for the answering process.<br />Your data is not sent to third parties.
+                                .form_div
+                                    button Send Request
+
+
+    script(src="./js/functions.js")
