@@ -4,9 +4,6 @@ function getMatches(season) {
 	$.getJSON( "./assets/matches/"+season+".json", function( data ) {
 		var arrMatch = [];
 
-		console.log("Matches: "+data.length);
-		console.log(season);
-
 		if(data.length != 0 || data.length != '' ) {
 			for(var i = 0; i < data.length; i++) {
 				
@@ -17,7 +14,7 @@ function getMatches(season) {
 					var visitorPoints = 0;
 					var homePoints = 0;
 
-					for( k = 0; k < 4; k++){
+					for( k = 0; k < 5; k++){
 						visitorPoints = visitorPoints + parseInt(data[i][j].visitor.points[k]);
 						homePoints = homePoints + parseInt(data[i][j].home.points[k]);
 					}
@@ -30,7 +27,6 @@ function getMatches(season) {
 				$( arrMatch[i] ).appendTo( "#playtable" );
 			}
 		}else{
-			console.log('No Matches');
 			var noContent = "<h2> No Matches available - Season "+ season +"-"+(season+1)+" did not start yet!</h2><p>You can watch the previous seasons instead.</p><p>Just click on the Dropdown-List under the headline and go throught the previous seasons!</p>";
 			$( noContent ).appendTo( "#playtable" );
 		}
