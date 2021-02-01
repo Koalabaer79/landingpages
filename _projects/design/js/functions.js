@@ -5,10 +5,9 @@ function showMenu() {
 
 function getDays(date1) {
     var today = new Date();
-    var date = today.getMonth()+'/'+(today.getDate()+1)+'/'+today.getFullYear();
-    today = new Date(date);
+    // var date = today.getMonth()+'/'+(today.getDate()+1)+'/'+today.getFullYear();
     var diff = today.getTime() - date1.getTime();
-    var years = 24*60*60*1000*365;
+	var years = 24*60*60*1000*365;
     var yearsDiff = diff/years
     var yearsShow = Math.floor(yearsDiff)
     var monthDiff = ((yearsDiff-yearsShow)*12);
@@ -28,8 +27,6 @@ function getDays(date1) {
 
 function getAge(date1) {
     var today = new Date();
-    var date = today.getMonth()+'/'+(today.getDate()+1)+'/'+today.getFullYear();
-    today = new Date(date);
     var diff = today.getTime() - date1.getTime();
     var years = 24*60*60*1000*365;
     var yearsDiff = diff/years

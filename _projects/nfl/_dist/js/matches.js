@@ -31,7 +31,7 @@ function getMatches(season) {
 			}
 		}else{
 			console.log('No Matches');
-			var noContent = "<h2> No Matches available - Season "+ season +"-"+(season+1)+" did not start yet!</h2><p>You can watch the previous season instead.</p>";
+			var noContent = "<h2> No Matches available - Season "+ season +"-"+(season+1)+" did not start yet!</h2><p>You can watch the previous seasons instead.</p><p>Just click on the Dropdown-List under the headline and go throught the previous seasons!</p>";
 			$( noContent ).appendTo( "#playtable" );
 		}
 	});

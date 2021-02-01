@@ -12,7 +12,7 @@ console.clear()
 if(checkProject(distFolder) === true) {
     // Find project name and read content of "_dist" folder into "data" object
     projectName = nameOfProject(path);
-    console.log(colors.yellow('Compiling project: '+projectName));
+	console.log(colors.yellow('Compiling project: '+projectName));
     const data = readFilesSync(distFolder);
 
     // If "data" has content, start process - if not, show error
@@ -59,7 +59,7 @@ if(checkProject(distFolder) === true) {
         var assets = checkAssets(distFolder+'assets');
         if(assets != true) {
             var t4 = performance.now();
-            copyAssets(distFolder,dateTime);
+            copyAssets(projectFolder,dateTime);
             var t5 = performance.now();
             tComplete_3 = (t5-t4);
             tComplete_3 = Math.round(tComplete_3 * 100) / 100
@@ -160,28 +160,30 @@ function replaceContent(data,files) {
 function readFilesSync(dir) {
     const files = [];  
     fs.readdirSync(dir).forEach(filename => {
-        count = filename.split('.').length;
-        extension = filename.split('.')[count-1];
-        if(extension === 'html') {
-            var content = fs.readFileSync(dir+filename, 'utf8');
-            files[filename] = content;
-        }
-        else{
-            newDir = dir+extension+'/';
-            if(extension !== 'assets') {
-                fs.readdirSync(newDir).forEach(filename => {
-                    var content = fs.readFileSync(newDir+filename, 'utf8');                
-                    count = filename.split('.').length;
-                    extension = filename.split('.')[count-1];
-                    if(extension === 'css'){
-                        files[filename] = content;
-                    }
-                    if(extension === 'js' && filename.includes('-min')){
-                        files[filename] = content;
-                    }               
-                });
-            }
-        }    
+		count = filename.split('.').length;
+		if(filename !== '.DS_Store') {
+			extension = filename.split('.')[count-1];
+			if(extension === 'html') {
+				var content = fs.readFileSync(dir+filename, 'utf8');
+				files[filename] = content;
+			}
+			else{
+				newDir = dir+extension+'/';
+				if(extension !== 'assets') {
+					fs.readdirSync(newDir).forEach(filename => {
+						var content = fs.readFileSync(newDir+filename, 'utf8');                
+						count = filename.split('.').length;
+						extension = filename.split('.')[count-1];
+						if(extension === 'css'){
+							files[filename] = content;
+						}
+						if(extension === 'js' && filename.includes('-min')){
+							files[filename] = content;
+						}               
+					});
+				}
+			}
+		}
     });
     return files;
 }
@@ -205,6 +207,6 @@ function createFiles(path,data,timeStamp){
 
 // Copy assets into export folder
 function copyAssets(path,timeStamp) {
-    return gulp.src(path+'/assets/**/*.*')
+    return gulp.src(path+'/_dist/assets/**/*.*')
         .pipe(gulp.dest(path+'/_export/'+timeStamp+'/assets'));
 }
