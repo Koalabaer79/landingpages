@@ -14,9 +14,14 @@ html(lang="de")
 		.container
 			include ./_shared/_menu.pug
 			#head
-				h1 NFL Spielplan
+				h1 NFL Games Schedule
 				div.custom-select
 					select#year
+
+			#subNav
+				.subEl
+					#unfold.button(onclick="showAll()") Unfold all
+				#filter.subEl
 			
 			div#playtable
 

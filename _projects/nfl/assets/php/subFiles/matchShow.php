@@ -37,6 +37,13 @@ function setSeason($year) {
 		array_push($finalArr, $$weekArr);
 	}
 
+	$restWeeks = 17 - $weeks;
+
+	for($i=1;$i<=$restWeeks;$i++) {
+		$weekArr = "week".$i;
+		array_push($finalArr, array());
+	}
+
 	$newJsonString = json_encode($finalArr);
 	file_put_contents('../matches/'.$year.'.json', $newJsonString);
 

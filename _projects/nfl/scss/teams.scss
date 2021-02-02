@@ -2,13 +2,37 @@
 @import './_shared/_select.scss';
 
 #subNav {
-	margin: 10px auto;
-	background-color: #c6c6c6;
-	max-width: 100px;
-	text-align: center;
-	font-family: $font;
-	padding: 5px;
-	cursor: pointer;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+
+	& .subEl {
+		min-width: 200px;
+
+		& .filter {
+			height: 28px;
+			font-family: $font;
+			font-size: 15px;
+			max-width: 170px;
+		}
+
+		& .button {
+			margin: 10px auto;
+			background-color: #c6c6c6;
+			border: none;
+			font-family: $font;
+			font-size: 15px;
+			max-width: 100px;
+			text-align: center;
+			padding: 5px 10px;
+			cursor: pointer;
+		}
+	}
+
 }
 
 .titleCont {
@@ -72,6 +96,9 @@ table {
 	cursor: pointer;	
 	&:hover {
 		background-color: #F6F6F6;
+	}
+	&.highlight {
+		background-color: lightgreen;
 	}
 }
 

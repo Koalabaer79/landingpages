@@ -1,3 +1,5 @@
+var defaultYear = "2020";
+
 function getTeams(year) {
 	$.getJSON( "./assets/teams/"+year+".json", function( data ) {
 
@@ -21,7 +23,7 @@ function getTeams(year) {
 				perc = perc.toFixed(3);
 			}
 
-			var content = "<tr class='teams' id='"+ data[i].code.toLowerCase() +"'><td><img class='smallImg' id='img" + i + "' src='assets/teams/logos/20x20/" + data[i].name.toLowerCase() + ".png' /></td><td class='teamListed' id='name" + i + "'>" + data[i].full_name + "</td><td class='data'>"+spiele+"</td><td class='data'>"+data[i].standings.s+"</td><td class='data'>"+data[i].standings.n+"</td><td class='data'>"+data[i].standings.u+"</td><td class='data'>"+perc+"</td><td class='data'>"+data[i].standings.p+"</td><td class='data'>"+data[i].standings.gp+"</td></tr>";
+			var content = "<tr class='teams' id='"+ data[i].name +"'><td><img class='smallImg' id='img" + i + "' src='assets/teams/logos/20x20/" + data[i].name.toLowerCase() + ".png' /></td><td class='teamListed' id='name" + i + "'>" + data[i].full_name + "</td><td class='data'>"+spiele+"</td><td class='data'>"+data[i].standings.s+"</td><td class='data'>"+data[i].standings.n+"</td><td class='data'>"+data[i].standings.u+"</td><td class='data'>"+perc+"</td><td class='data'>"+data[i].standings.p+"</td><td class='data'>"+data[i].standings.gp+"</td></tr>";
 
 			// fill arrays
 			for( var h = 0; h < keys.length; h++ ) {
@@ -88,10 +90,9 @@ function showAll() {
 	var keys = [ "afcEast", "afcWest", "afcNorth", "afcSouth", "nfcEast", "nfcWest", "nfcNorth", "nfcSouth" ];
 
 	for(var i = 0; i < keys.length; i++) {
-		console.log(keys[i]);
 		var el = document.getElementById(keys[i]);
 		var arrow = document.getElementById('arrow'+keys[i]);
-		var foldText = document.getElementById('subNav');
+		var foldText = document.getElementById('unfold');
 		if(el.style.height == '0px' || el.style.height == ''){
 			el.style.height = '200px';
 			arrow.style.transform = "rotate(-270deg)";
@@ -105,6 +106,20 @@ function showAll() {
 	}
 }
 
+// open all tables
+function openAll() {
+	var keys = [ "afcEast", "afcWest", "afcNorth", "afcSouth", "nfcEast", "nfcWest", "nfcNorth", "nfcSouth" ];
+
+	for(var i = 0; i < keys.length; i++) {
+		var el = document.getElementById(keys[i]);
+		var arrow = document.getElementById('arrow'+keys[i]);
+		var foldText = document.getElementById('unfold');
+		el.style.height = '200px';
+		arrow.style.transform = "rotate(-270deg)";
+		foldText.innerHTML = "Fold all";
+	}
+}
+
 // change season function
 function changeSeason(season) {
 	$.getJSON( "./assets/teams/"+season+".json", function( data ) {
@@ -113,13 +128,19 @@ function changeSeason(season) {
 			el.remove();
 		}
 	});
+	var z = document.getElementById('filterSelect');
+	// set to 0 and update season
+	z.setAttribute('onchange', 'getTeamMatches('+season+',this.value)')
+	z.selectedIndex = 0;
+	// start process for week and match container creation
 	getTeams(season);
 };
 
 // fetch available seasons and create select options
 function setSeasons() {	
 	$.getJSON( "./assets/seasons/seasons.json", function( data ) {		
-		var year = new Date().getFullYear();
+		// var year = new Date().getFullYear();
+		var year = defaultYear;
 		var option = '<option value="">Select Season</option>';
 		$( option ).appendTo( "#year" );
 		for (var i = 0; i < data.length; ++i) {
@@ -195,9 +216,42 @@ function setSeasons() {
 			}
 		}
 		}
-		document.addEventListener("click", closeAllSelect);
+		document.addEventListener("click", closeAllSelect);00
+		createFilter(year);
 		getTeams(year);
 	});
+}
+
+// function to create team filter selection
+function createFilter(season) {
+	$.getJSON( "./assets/teams/"+season+".json", function( data ) {
+		var teamOption = '<select class="filter" id="filterSelect" onchange="highlightTeam(this.value)"><option value="">... filter</option>';
+		var teamFilter = [];
+		for(var i = 0; i < data.length; i++) {
+			teamFilter.push(data[i].name);
+		}
+		teamFilter.sort();
+		for(var i = 0; i < teamFilter.length; i++) {
+			teamOption += '<option value="'+teamFilter[i]+'">'+teamFilter[i]+'</option>';
+		}
+		teamOption += '</select>';
+		$( teamOption ).appendTo( "#filter" );
+	});
+}
+
+// function to highlight team after filter
+function highlightTeam(data) {
+	var team = document.getElementById(data);
+	var old = document.getElementsByClassName('highlight')[0]
+	if(old != undefined) {
+		var oldID = document.getElementsByClassName('highlight')[0].id
+		document.getElementById(oldID).classList.remove('highlight');
+	}
+	if(data != '') {
+		team.classList.add('highlight');
+	}
+	openAll();
+	
 }
 
 // start script

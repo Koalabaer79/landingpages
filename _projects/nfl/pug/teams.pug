@@ -15,11 +15,14 @@ html(lang="de")
 		.container
 			include ./_shared/_menu.pug
 			#head
-				h1 NFL Tabelle
+				h1 NFL Season Table
 				div.custom-select
 					select#year
 
-			#subNav(onclick="showAll()") Unfold all
+			#subNav
+				.subEl
+					#unfold.button(onclick="showAll()") Unfold all
+				#filter.subEl
 
 			div.titleCont(onclick="showTable('afcEast','arrow1')")
 				h2 AFC East
