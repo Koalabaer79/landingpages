@@ -1,0 +1,58 @@
+doctype html
+html(lang="de")
+	head
+		meta(charset="utf-8")
+		title Stean - Maine Coon Mix
+		meta(name="description",content="Stean - Maine Coon Mix - mein Leben als verwöhnter Kater im Netz.")
+		meta(name="keywords",content="stean, maine coon, mix, kater, verwöhnter, portrait")
+		meta(name="viewport",content="width=device-width, initial-scale=1")
+		link(href="./css/index.css",rel="stylesheet",type="text/css")
+		link(rel="preconnect" href="https://fonts.gstatic.com")
+		link(href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600&display=swap" rel="stylesheet")
+	body(id="body")
+		div(id="container")
+			include ./_shared/menu.pug
+
+			#header
+				.imgCont
+					img.headerImg(src="./assets/stean.jpg" alt="Stean - Maine Coon Mix")
+				.titleCont
+					h1#title Stean - Maine Coon Mix
+					#headerContent
+						p Hallo! Mein Name ist Stean und ich bin zu dreiviertel ein Maine Coon. Ich bin jetzt <span id="age"></span> alt und habe es faustdick hinter den Ohren! Meine Hobbies sind Kämpfen, Blödsinn machen, Papa und Mama ärgern, fressen und schlafen. Mein Tag ist nie langweilig. Ich liebe meine Karotte und meinen Kratzbaum - Mama und Papa natürlich auch.
+						p Ich wachse bilingual auf - zum Glück versteht man das "Miau" in allen Sprachen!
+						p Ihr seid herzlich willkommen in meinem Leben als Maine Coon Mix! Schaut euch überall um, es gibt viel von mir zu entdecken! Viel Spaß wünsche ich Euch von ganzem Herzen.
+						p.bold Euer Stean
+
+			//- .interlude
+
+			#contHalf
+				.contIns
+					.icoCont
+						img.icon(src="./assets/icons/portrait.png" alt="Maine Coon Portrait")
+					h2 Maine Coon - kurzes Portrait
+					p Der Ursprung meiner Rasse liegt in den USA. Explizit stammen sie aus dem Bundesstaat Maine, welches sich in den Rassennamen eingepflegt hat. Es wurde behauptet, dass Maine Coons eine Mischung aus Katze und Waschbär sind, also eine Racoon-Cat - doch dass ist schon aus biologischer Sicht unmöglich. Bei manchen Katzen oder Katern jedoch ist das Fellmuster ähnlich und deshalb kam wohl der Eindruck auf, es handle sich um eben diesen Mix.
+					p Es gibt noch viel mehr Details über meine Rasse zu wissen! Wenn du mehr über Maine Coons lesen möchtest, dann informiere dich auf der Portrait-Seite. Klick einfach auf den Button!
+					.buttonCont
+						a.button(href="#") mehr Infos
+				.contIns
+					.icoCont
+						img.icon(src="./assets/icons/fakten.png" alt="Maine Coon Fakten")
+					h2 Interessante Fakten
+					p Es gibt eine Reihe interessanter Fakten zu Maine Coon Katzen und Katern. Zum Beispiel sind wir die größten Hauskatzen auf der Welt. Zu welcher Rasse gehörte die erste Show-Katze in Amerika, die je bei einer Ausstellung ausgestellt wurden? Oder möchtest du wissen, welche Katzen-Rasse als erster Klon der Welt gilt? Zahlreiche Legenden und Mythen und ranken sich um meine Rasse und es gibt auch dazu viel zu erklären!
+					p Die Infos gibt es überall im Netz, doch warum nicht einen kurzen Blick auf meine Zusammenfassung werfen? Diese erreichst du über den folgenden Button - klick einfach drauf!
+					.buttonCont
+						a.button(href="#") zu den Fakten
+			
+			.contGal
+				h2 Neueste Fotos von Stean dem Maine Coon Mix
+				.gallery
+				.buttonCont
+					a.button(href="#") Zur Gallerie
+
+
+
+            
+			include ./_shared/footer.pug
+
+script(src="./js/index.js")

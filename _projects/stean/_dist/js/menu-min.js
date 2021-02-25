@@ -1,0 +1,1 @@
+var menuArr=["portrait","facts","gallery"];function getActive(){for(var e=window.location.pathname,t=0;t<menuArr.length;t++)1==e.includes(menuArr[t])&&document.getElementById(menuArr[t]).classList.add("active")}getActive();

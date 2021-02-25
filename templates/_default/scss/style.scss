@@ -1,4 +1,6 @@
-$font: Verdana, Geneva, Tahoma, sans-serif;
+@import "./_variables.scss";
+@import "./_nav.scss";
+@import "./_footer.scss";
 
 html, body, #container, #div {
     margin: 0;

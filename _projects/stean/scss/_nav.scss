@@ -1,0 +1,46 @@
+@import "./_variables.scss";
+
+#nav {
+    width: 100%;
+    display: block;
+    margin: 0;
+
+    .menu {
+
+        list-style: none;
+        width: auto;
+        margin: 0;
+        padding: 0;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        background-color: $white-color;
+
+        li {
+            float: left;
+
+            a {
+                padding: 10px 20px;
+                text-decoration: none;
+                display: block;
+                color: $font-color;
+				font-family: $font;
+				font-size: 20px;
+				font-weight: 600;
+				transform-origin: center top;
+				border-radius: 30px;
+				transition: .5s color, .5s transform, .5s background-color, .5s color;
+
+				&.active {
+					color: $sec-color;
+				}
+            }
+
+            a:hover {
+				transform: rotateZ(0.0001deg) scale(1.2);
+                background-color: $sec-color;
+				color: $white-color;
+			}
+        }
+    }
+}

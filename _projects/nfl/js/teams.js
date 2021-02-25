@@ -124,7 +124,7 @@ function openAll() {
 function changeSeason(season) {
 	$.getJSON( "./assets/teams/"+season+".json", function( data ) {
 		for (var i = 0; i < data.length; ++i) {
-			el = document.getElementById(data[i].code.toLowerCase());
+			var el = document.getElementById(data[i].code.toLowerCase());
 			el.remove();
 		}
 	});
@@ -216,7 +216,7 @@ function setSeasons() {
 			}
 		}
 		}
-		document.addEventListener("click", closeAllSelect);00
+		document.addEventListener("click", closeAllSelect);
 		createFilter(year);
 		getTeams(year);
 	});
