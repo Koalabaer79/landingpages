@@ -1,1 +1,0 @@
-function getAge(e){var t=((new Date).getTime()-e.getTime())/31536e6,a=Math.floor(t),n=12*(t-a),o=Math.floor(n),r=31*(n-o),g="",M="",h="and";return Math.floor(r)>20&&(o+=1),1==a?g="Jahr":0==a?(a="",h=""):g="Jahre",1==o?M="Monat":0==o?(o="",h=""):M="Monate",a+" "+g+" "+h+" "+o+" "+M}document.getElementById("age").innerHTML=getAge(new Date("12/28/2020"));

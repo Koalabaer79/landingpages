@@ -1,6 +1,5 @@
 document.getElementById('age').innerHTML = getAge(new Date("12/28/2020"))
 getActive();
-getGallery();
 
 function getAge(date1) {
     var today = new Date();
@@ -27,10 +26,4 @@ function getAge(date1) {
 
 function getActive() {	
 	document.getElementById("index").classList.add("active");
-}
-
-function getGallery() {
-	var fs = require('fs');
-	var files = fs.readdirSync('/assets/gallery/thumbs');
-	console.log(files);
 }

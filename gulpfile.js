@@ -1,6 +1,7 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 var pug = require('gulp-pug');
+var rename = require('gulp-rename');
 const minify = require('gulp-minify');
 var colors = require('colors');
 const fs = require('fs');
@@ -9,6 +10,7 @@ var browserSync = require('browser-sync').create();
 
 // Local Variables
 var projectFolder = process.env.INIT_CWD;
+var directFolder = projectFolder.split("LP_compiler")[1];
 var name = process.argv[4];
 var template = process.argv[6];
 
@@ -28,10 +30,25 @@ gulp.task('sass', function() {
 });
 
 // Compile Pug Files
+gulp.task('pug-php', function() {
+    if(fs.existsSync(projectFolder) && projectFolder.includes('_projects')){
+        return gulp.src(projectFolder+'/pug/*.pug')
+			.pipe(pug())
+			.pipe(rename({
+				extname: '.php'
+			}))
+            .pipe(gulp.dest(projectFolder+'/_dist/'))
+            .pipe(browserSync.stream());
+    }else{
+        return console.log(colors.redBG('Maybe switch into your current project folder?'));
+    }
+});
+
+// Compile Pug Files
 gulp.task('pug', function() {
     if(fs.existsSync(projectFolder) && projectFolder.includes('_projects')){
         return gulp.src(projectFolder+'/pug/*.pug')
-            .pipe(pug())
+			.pipe(pug())
             .pipe(gulp.dest(projectFolder+'/_dist/'))
             .pipe(browserSync.stream());
     }else{
@@ -61,16 +78,12 @@ gulp.task('js', function() {
     }
 });
 
-
 gulp.task('browserSync', function() {
-    var routePage = '/_dist/';
+    var routePage = directFolder+'/_dist/';
     browserSync.init({
         startPath: routePage,
-        // proxy: 'localhost:3001',
-        browser: "google chrome",
-        server: {
-            baseDir: process.env.INIT_CWD
-        },
+        proxy: 'localhost:3000',
+        browser: "google chrome"
     })
     if(name == undefined){
         var file = 'index.html';
@@ -87,8 +100,32 @@ gulp.task('browserSync', function() {
     console.log(colors.green(' Watching '+file));
 });
 
-// Watch Project -> including SASS, PUG and BROWSERSYNC Tasks
+gulp.task('browserSync-php', function() {
+    var routePage = directFolder+'/_dist/';
+    browserSync.init({
+        startPath: routePage,
+        proxy: 'localhost:8000',
+        browser: "google chrome"
+    })
+    if(name == undefined){
+        var file = 'index.php';
+    }else{
+        var elements = name.split('/').length;
+        var file = name.split('/')[elements-1];
+        file = file.replace('pug', 'php');
+    }
+    gulp.watch(process.env.INIT_CWD+'/pug/**/*.pug', gulp.series('pug-php')).on('change', browserSync.reload);
+    gulp.watch(process.env.INIT_CWD+'/scss/*.scss', gulp.series('sass')).on('change', browserSync.reload);
+    gulp.watch(process.env.INIT_CWD+'/js/*.js', gulp.series('js')).on('change', browserSync.reload);
+    gulp.watch(process.env.INIT_CWD+'/assets/**/*.*', gulp.series('copy')).on('change', browserSync.reload);
+    gulp.watch(process.env.INIT_CWD+'/_dist/'+file).on('change', browserSync.reload);
+    console.log(colors.green(' Watching '+file));
+});
+
+// Watch HTML Project -> including SASS, PUG and BROWSERSYNC Tasks
 gulp.task('watch', gulp.series('sass', 'pug', 'js', 'copy', 'browserSync'));
+// Watch PHP Project -> including SASS, PUG and BROWSERSYNC Tasks
+gulp.task('watch-php', gulp.series('sass', 'pug-php', 'js', 'copy', 'browserSync-php'));
 
 // Create new Project
 gulp.task('new', function() {
