@@ -25,10 +25,12 @@
 
 .contGal {
 	background-color: $main-color;
+	padding-bottom: 20px;
 
 	h2 {
 		width: 100%;
 		margin-top: 30px;
+		margin-bottom: 0;
 		text-align: center;
 	}
 
@@ -37,6 +39,15 @@
 		max-width: 1280px;
 		margin: 20px 0;
 		background-color: $main-color;
+
+		.textCont {
+			text-align: center;
+			width: calc(100% - 40px);
+			max-width: 1280px;
+			padding: 0 20px 20px 20px;
+			font-size: 18px;
+			color: $font-color;
+		}
 
 		.imgCont {
 			width: calc(25% - 10px);
@@ -53,6 +64,7 @@
 				display: block;
 				width: calc(100% - 10px);
 				margin: 5px;
+				box-shadow: 2px 2px 5px #363636;
 
 				@media screen and (max-width:1000px){
 					width: calc(100% - 20px);
@@ -93,4 +105,8 @@
 		}
 	}
 
+}
+
+#headerImg, #headerText , #indexCont1, #indexCont2, #indexCont3, #indexCont4 {
+	opacity: 0;
 }

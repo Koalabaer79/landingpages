@@ -27,3 +27,5 @@ function getAge(date1) {
 function getActive() {	
 	document.getElementById("index").classList.add("active");
 }
+
+var elements = [ 'headerImg', 'headerText', 'indexCont1', 'indexCont2', 'indexCont3', 'indexCont4' ];

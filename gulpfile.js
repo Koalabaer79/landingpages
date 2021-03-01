@@ -10,7 +10,7 @@ var browserSync = require('browser-sync').create();
 
 // Local Variables
 var projectFolder = process.env.INIT_CWD;
-var directFolder = projectFolder.split("LP_compiler")[1];
+var directFolder = projectFolder.split("htdocs")[1];
 var name = process.argv[4];
 var template = process.argv[6];
 
@@ -104,7 +104,7 @@ gulp.task('browserSync-php', function() {
     var routePage = directFolder+'/_dist/';
     browserSync.init({
         startPath: routePage,
-        proxy: 'localhost:8000',
+        proxy: 'localhost:8888',
         browser: "google chrome"
     })
     if(name == undefined){

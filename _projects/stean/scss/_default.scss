@@ -35,7 +35,7 @@ h3 {
 	margin: 0 auto;
 }
 
-#header {
+.header {
 	width: 100%;
 	margin: 0;
 	color: $font-color;
@@ -167,8 +167,10 @@ h3 {
 		border-radius: 35px;
 		padding: 10px 30px;
 		text-decoration: none;
+		transform: rotateZ(0.0001deg) scale(1);
 		transition: .5s transform, .5s color, .5s background-color;
 		backface-visibility: hidden;
+		box-shadow: 2px 2px 5px #363636;
 
 		&:hover {
 			transform: rotateZ(0.0001deg) scale(1.1);
@@ -196,4 +198,18 @@ h3 {
 	&:hover {
 		transform: rotateZ(0.0001deg) scale(1.1);
 	}
+}
+
+.fadeIn{
+	// display: block !important;
+    animation: 1s fadeIn forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }

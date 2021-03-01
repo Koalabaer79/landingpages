@@ -23,13 +23,17 @@ function getFiles($path) {
 function sortActual($files, $path) {
 	$filesSort = arsort($files);
 	$filesCut = array_slice($files, 0, 4);
+	$output = "";
 	foreach($filesCut as $fileName => $date) {
-		echo '<div class="imgCont"><img src="'.$path.$fileName.'" /></div>';
+		$output .= '<div class="imgCont"><img src="'.$path.$fileName.'" /></div>';
 	}
+	return $output;
 }
 
 $path = './assets/gallery/thumbs/';
 $files = getFiles($path);
-sortActual($files, $path);
+$show = '<p class="textCont">Meine Gallerie umfasst insgesamt '.count($files).' Bilder. Folgend zeige ich die 4 neuesten Fotos von mir.<br />Klicke auf den unteren Button um die gesamte Galerie zu sehen.';
+$show .= sortActual($files, $path);
+echo $show;
 
 ?>

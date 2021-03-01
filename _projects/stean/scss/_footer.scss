@@ -1,14 +1,13 @@
 @import "./_variables.scss";
 
 footer {
-    background-color: grey;
-    margin-top: 20px;
+    background-color: $main-color;
     display: flex;
     justify-content: center;
 
     .section {
         width: auto;
-        color: #fff;
+        color: $font-color;
         margin: 0 20px;
         padding: 0;
 
@@ -24,7 +23,7 @@ footer {
                 a {
                     text-decoration: none;
                     font-family: $font;
-                    color: #fff;
+                    color: $font-color;
                     padding: 10px 20px;
                     margin: 0;
                     padding: 0;
@@ -35,6 +34,8 @@ footer {
                 }
             }
         }
-
+		.section:nth-last-child(1) {
+			float: right;
+		}
     }
 }
