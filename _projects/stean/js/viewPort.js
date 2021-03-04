@@ -15,12 +15,7 @@ function fullyInViewport() {
 function partlyInViewport() {
     elements.forEach(el => {
 		var elem = document.getElementById(el);
-		var percentShow = 0;
-		if( window.innerWidth > 600 ) {
-			percentShow = 50;
-		}else{
-			percentShow = 30;
-		}
+		var percentShow = 30;
         if (isElementXPercentInViewport(elem, percentShow)) {
             elem.classList.add('fadeIn');
         }

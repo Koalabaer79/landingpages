@@ -1,14 +1,15 @@
 doctype html
 html(lang="de")
 	head
-		meta(charset="utf-8")
 		title Stean - Maine Coon Mix
 		meta(name="description",content="Stean - Maine Coon Mix - mein Leben als verwöhnter Kater im Netz.")
 		meta(name="keywords",content="stean, maine coon, mix, kater, verwöhnter, portrait")
-		meta(name="viewport",content="width=device-width, initial-scale=1")
+		link(rel="alternate" hreflang="de-DE" href="https://www.stean-maine-coon.de/index.php")
+		link(rel="canonical" href="https://www.stean-maine-coon.de/index.php")
 		link(href="./css/index.css",rel="stylesheet",type="text/css")
-		link(rel="preconnect" href="https://fonts.gstatic.com")
-		link(href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600&display=swap" rel="stylesheet")
+
+		include ./_shared/head.pug		
+
 	body(id="body")
 		div(id="container")
 			include ./_shared/nav_de.pug
@@ -42,10 +43,9 @@ html(lang="de")
 					.buttonCont
 						a.button(href="#" title="Alle Fakten zu Maine Coon") zu den Fakten
 			
-			.contGal.mainBG#indexCont3
-				h2 Neueste Fotos von Stean dem Maine Coon Mix
-				.galCont
-					<?php include('./assets/php/thumbGal.php'); ?>
+			.contGal.greenBG#indexCont3
+				<h2>Gallerie von Stean dem Maine Coon Mix</h2>
+				<?php include('./assets/php/thumbGal.php'); ?>
 				.buttonCont
 					a.button(href="#" title="direkt zu Stean Gallerie") Zur Gallerie
 				
@@ -55,15 +55,16 @@ html(lang="de")
 						img.icon(src="./assets/icons/fragen.png" alt="Stean in den Social-Media")
 					h2 Fragen und Antworten
 					p Ich möchte euch erklären, was ich als Maine Coon Kater so Grundsätzlich benötige, denn als große Katze unterscheide ich mich von den normalen Hauskatzen schon ein wenig. Ich brauche jetzt keiene spezielle Sonderbehandlung, jedoch sollte man sich über ein paar Dinge Gedanken machen.
-					p Dabei geht es im Detail um meine Ernährung, die Spielzeuge die ich gerne benutze und auch, welcher Kratzbaum ist sinnvoll für einen Maine Coon wie mich. Und was für eine Pflege ist wichtig? All das erfahrt ihr über die folgenden Menüpunkte.
+					p Dabei geht es im Detail um meine Ernährung, die Spielzeuge die ich gerne benutze und auch, welcher Kratzbaum für einen Maine Coon wie mich sinnvoll ist. Auch möchte ich gerne erklären, was für eine Pflege ich benötige.
+					p All das erfahrt ihr über die folgenden Menüpunkte.
 					.buttonCont
 						a.button(href="#" title="Was für eine Ernährung braucht ein Maine Coon Kater") Ernährung
 						a.button(href="#" title="Benötigen wir eine spezielle Pflege?") Pflege
 					.buttonCont
 						a.button(href="#" title="Muss ich besondere Spielzeige haben?") Spielzeug
-						a.button(href="#" title="Was ist bei einem Kratzbaum für mich zu beachten?") Kratzbaum
+						a.button(href="#" title="Was ist bei einem Kratzbaum zu beachten?") Kratzbaum
 
-			.contInsta.mainBG
+			.contInsta.greenBG
 				.contIns#indexCont4
 					.icoCont
 						img.icon(src="./assets/icons/social.png" alt="Stean in den Social-Media")

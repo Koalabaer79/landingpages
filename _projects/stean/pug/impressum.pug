@@ -1,1 +1,2 @@
-<div>Icons erstellt von <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/de/" title="Flaticon">www.flaticon.com</a></div>
+<div>Kitty-Icons made from<a href="https://www.freepik.com" title="Freepik">Freepik</a> on <a href="https://www.flaticon.com/de/" title="Flaticon">www.flaticon.com</a></div>
+<div>Menu-Icon and Favico made from <a href="http://www.onlinewebfonts.com/icon">Icon Fonts</a> is licensed by CC BY 3.0</div>

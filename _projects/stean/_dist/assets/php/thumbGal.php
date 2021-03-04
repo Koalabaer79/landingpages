@@ -23,17 +23,22 @@ function getFiles($path) {
 function sortActual($files, $path) {
 	$filesSort = arsort($files);
 	$filesCut = array_slice($files, 0, 4);
-	$output = "";
+	$output = '<div class="imagesCont">';
+	$loop = 1;
 	foreach($filesCut as $fileName => $date) {
-		$output .= '<div class="imgCont"><img src="'.$path.$fileName.'" /></div>';
+		$name = substr($fileName, 0, -4);
+		$output .= '<div class="imgCont"><img src="'.$path.$fileName.'" alt="Stean Galleriebild '.$loop.'" /></div>';
+		$loop++;
 	}
+	$output .= "</div>";
 	return $output;
 }
 
 $path = './assets/gallery/thumbs/';
 $files = getFiles($path);
-$show = '<p class="textCont">Meine Gallerie umfasst insgesamt '.count($files).' Bilder. Folgend zeige ich die 4 neuesten Fotos von mir.<br />Klicke auf den unteren Button um die gesamte Galerie zu sehen.';
+$show = '<div class="insCont"><p class="textCont">Meine Gallerie umfasst insgesamt '.count($files).' Bilder. Folgend zeige ich die 4 neuesten Fotos von mir.<br />Klicke auf den unteren Button um die gesamte Galerie zu sehen.';
 $show .= sortActual($files, $path);
+$show .= "</div>";
 echo $show;
 
 ?>
