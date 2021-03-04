@@ -1,1 +1,1 @@
-var menuArr=["portrait","facts","gallery"];function getActive(){for(var e=window.location.pathname,t=0;t<menuArr.length;t++)1==e.includes(menuArr[t])&&document.getElementById(menuArr[t]).classList.add("active")}getActive();
+var menuArr=["portrait","facts","gallery","kontakt"];function getActive(){for(var t=window.location.pathname,e=0;e<menuArr.length;e++)1==t.includes(menuArr[e])&&document.getElementById(menuArr[e]).classList.add("active")}getActive();

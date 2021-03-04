@@ -16,13 +16,13 @@ h1, h2, h3, p, li {
 }
 
 h2 {
-    font-size: 24px;
+    font-size: 28px;
 	color: $font-color;
 	margin: 0 0 20px 0;
 }
 
 h3 {
-    font-size: 18px;
+    font-size: 22px;
 }
 
 .bold {
@@ -38,6 +38,7 @@ h3 {
 .header {
 	width: 100%;
 	margin: 0;
+	padding: 30px 0;
 	color: $font-color;
 	background-color: $main-color;
 
@@ -48,7 +49,7 @@ h3 {
 		text-align: center;
 		margin: 0 auto;
 		h1 {
-			font-size: 30px;
+			font-size: 34px;
 			display: block;
 			width: 100%;
 			font-weight: 600;
@@ -90,11 +91,10 @@ h3 {
     }
 }
 
-.contHalf, .contFull {
+.contHalf, .contFull, .buttonCont {
 	width: 100%;
-	max-width: 1280px;
 	margin: 0 auto;
-	background-color: $white-color;
+	padding: 50px 0;
 	display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
@@ -115,7 +115,8 @@ h3 {
 	align-items: stretch;
 }
 
-.contHalf { 
+.contHalf {
+	max-width: 1280px;
 	.contIns {
 		padding: 30px;
 		width: calc(50% - 60px);
@@ -137,9 +138,12 @@ h3 {
 }
 
 .contFull {	
+	width: 100%;
+
 	.contIns {
 		padding: 30px 20px;
 		width: calc(100% - 40px);
+		max-width: 1000px;
 
 		h2 {
 			text-align: center;
@@ -151,15 +155,29 @@ h3 {
 			text-align: center;
 		}
 	}
+
+	.buttonCont {		
+		max-width: 1000px;
+		.button {
+			margin: 20px;
+		}
+	}
 }
 
 .buttonCont {
 	width: 100%;
 	text-align: center;
-	margin: 30px 0;
+	// margin: 30px 0;
+
+	.insFull {
+		width: calc(100% - 40px);
+		padding: 10px 20px;
+	}
 
 	.button {
+		width: 200px;
 		border: 2px solid $sec-color;
+		background-color: $font-color;
 		color: $sec-color;
 		display: inline-block;
 		font-family: $font;
@@ -170,6 +188,8 @@ h3 {
 		transform: rotateZ(0.0001deg) scale(1);
 		transition: .5s transform, .5s color, .5s background-color;
 		backface-visibility: hidden;
+		-webkit-backface-visibility: hidden;
+		-moz-backface-visibility: hidden;
 		box-shadow: 2px 2px 5px #363636;
 
 		&:hover {
@@ -178,6 +198,14 @@ h3 {
 			color: $white-color;
 		}
 	}
+}
+
+.whiteBG {
+	background-color: $white-color;
+}
+
+.mainBG {
+	background-color: $main-color;
 }
 
 .icoCont {
@@ -194,14 +222,14 @@ h3 {
 }
 
 .scale {
+	transform: rotateZ(0.0001deg) scale(0.75);
 	transition: .5s transform;
 	&:hover {
-		transform: rotateZ(0.0001deg) scale(1.1);
+		transform: rotateZ(0.0001deg) scale(0.9);
 	}
 }
 
 .fadeIn{
-	// display: block !important;
     animation: 1s fadeIn forwards;
 }
 

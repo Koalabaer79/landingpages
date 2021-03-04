@@ -24,29 +24,30 @@
 }
 
 .contGal {
-	background-color: $main-color;
-	padding-bottom: 20px;
+	background-color: $font-color;
+	padding: 100px 0;
 
 	h2 {
 		width: 100%;
-		margin-top: 30px;
-		margin-bottom: 0;
+		margin: 0 20px;
 		text-align: center;
+		color: $main-color;
 	}
 
 	.galCont {
 		width: 100%;
 		max-width: 1280px;
 		margin: 20px 0;
-		background-color: $main-color;
+		// background-color: $main-color;
+		color: $main-color;
 
 		.textCont {
 			text-align: center;
 			width: calc(100% - 40px);
 			max-width: 1280px;
-			padding: 0 20px 20px 20px;
+			padding: 20px;
 			font-size: 18px;
-			color: $font-color;
+			color: $main-color;
 		}
 
 		.imgCont {
@@ -90,12 +91,22 @@
 	}
 }
 
+#indexCont5 {
+	.buttonCont {
+		padding: 30px 0 0 0;
+		.button {
+			margin: 10px 20px;
+		}
+	}
+}
+
 .contInsta {
-	max-width: 800px;
+	width: 100%;
 	margin: 0 auto;
 	text-align: center;
 	
 	.contIns {
+		max-width: 800px;
 		padding: 30px 20px;
 		width: calc(100% - 40px);
 
@@ -104,9 +115,8 @@
 			color: $font-color;
 		}
 	}
-
 }
 
-#headerImg, #headerText , #indexCont1, #indexCont2, #indexCont3, #indexCont4 {
+#headerImg, #headerText , #indexCont1, #indexCont2, #indexCont3, #indexCont4, #indexCont5 {
 	opacity: 0;
 }

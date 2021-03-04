@@ -1,7 +1,7 @@
 @import "./_variables.scss";
 
 footer {
-    background-color: $main-color;
+    background-color: $font-color;
 	display: -ms-flexbox;
 	display: -webkit-flex;
 	display: flex;
@@ -14,16 +14,17 @@ footer {
 	-webkit-justify-content: center;
 	-ms-flex-pack: center;
 	justify-content: center;
+	border-bottom: 2px solid $sec-color;
 
     .section {
         width: auto;
         margin: 20px;
 		padding: 0;
-		width: 210px;
+		width: 190px;
 
 		h3 {
 			margin: 20px 10px;
-			color: $font-color;
+			color: $white-color;
 			text-align: center;
 		}
 
@@ -45,7 +46,7 @@ footer {
                     text-decoration: none;
                     font-family: $font;
 					color: $sec-color;
-                    padding: 10px 20px;
+                    padding: 5px 10px;
 					text-align: center;
 					margin: 10px;
 					box-shadow: 2px 2px 5px #363636;
@@ -63,7 +64,7 @@ footer {
 			li.text {
 				width: (210 - 40)+px;
 				font-family: $font;
-				color: $font-color;
+				color: $white-color;
 				display: block;
 				text-align: center;
 				margin: 10px 0;

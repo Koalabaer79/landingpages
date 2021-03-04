@@ -1,4 +1,4 @@
-var menuArr = ["portrait", "facts", "gallery"];
+var menuArr = ["portrait", "facts", "gallery", "kontakt"];
 
 function getActive() {
 	var path = window.location.pathname;
