@@ -4,11 +4,6 @@ function getFiles($path) {
 	$images = scandir($path);
 	$countImg = (count($images) - 2);
 
-	$imgShow = 4;
-	if($countImg < $ingShow) {
-		$imgShow = $countImg;
-	}
-
 	$filesArr = array();
 	foreach($images as $img) {
 		$imgPath = $path.$img;
@@ -21,7 +16,7 @@ function getFiles($path) {
 }
 
 function sortActual($files, $path) {
-	$filesSort = arsort($files);
+	arsort($files);
 	$filesCut = array_slice($files, 0, 4);
 	$output = '<div class="imagesCont">';
 	$loop = 1;

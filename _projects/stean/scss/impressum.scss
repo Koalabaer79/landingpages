@@ -1,0 +1,29 @@
+@import "./_default.scss";
+
+.insCont {
+	margin: 100px auto;
+	max-width: 1000px;
+	width: calc(100%-40px);
+	padding: 0 20px;
+	color: $color-darkGreen;
+
+	h1 {
+		font-family: $font;
+		font-size: 34px;
+		text-align: center;
+	}
+	h2 {
+		font-size: 24px;
+	}
+	p, li {
+		font-size: 18px;
+		a {
+			font-family: $font;
+			color: $color-orange;
+			font-weight: 600;
+		}
+	}
+	li {
+		float: none;
+	}
+}

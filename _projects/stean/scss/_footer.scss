@@ -57,7 +57,7 @@ footer {
 						transition: .5s transform;
 					}
 
-					a:hover {
+					a:hover, a.active {
 						background-color: $color-orange;
 						color: $color-white;
 						transform: rotateZ(0.0001deg) scale(1.1);

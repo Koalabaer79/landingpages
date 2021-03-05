@@ -2,6 +2,10 @@
 @import "./_nav.scss";
 @import "./_footer.scss";
 
+* {
+	box-sizing: border-box;
+}
+
 html, body, #container, #div {
     margin: 0;
     padding: 0;
@@ -9,6 +13,7 @@ html, body, #container, #div {
 
 body {
 	background-color: $color-white;
+	
 }
 
 h1, h2, h3, p, li {
