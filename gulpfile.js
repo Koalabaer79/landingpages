@@ -5,6 +5,7 @@ var rename = require('gulp-rename');
 const minify = require('gulp-minify');
 var colors = require('colors');
 const fs = require('fs');
+const { platform } = require('os');
 var browserSync = require('browser-sync').create();
 // var path = require('path');
 
@@ -13,6 +14,8 @@ var projectFolder = process.env.INIT_CWD;
 var directFolder = projectFolder.split("htdocs")[1];
 var name = process.argv[4];
 var template = process.argv[6];
+var systemplatform = process.platform;
+console.log(systemplatform);
 
 // Compile Sass Files
 gulp.task('sass', function() {
