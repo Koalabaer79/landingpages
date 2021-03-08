@@ -13,10 +13,8 @@ function resizeFunc() {
 	el = document.getElementById('navItems');
 	width = window.innerWidth;
 	if(width <= 700) {
-		console.log(width)
 		el.style.height = "0px";
 	}else{
-		console.log(width)
 		el.style.height = "50px"
 	}
 }

@@ -35,9 +35,10 @@ function sortActual($files, $pathThumbs, $pathFull, $page, $items) {
 	$output .= '<div class="imagesCont">';
 	$loop = 1;
 	foreach($filesCut as $fileName => $date) {
+		$delay = $loop * 0.2;
 		$imgPath = $pathThumbs.$fileName;
 		$name = date ("d.m.Y", filemtime($imgPath));
-		$output .= '<div class="imgCont"><img src="'.$pathThumbs.$fileName.'" alt="Stean Galleriebild '.$loop.'" onclick="showImage(\''.$pathFull.$fileName.'\')" /><p>'.$name.'</p></div>';
+		$output .= '<div class="imgCont" style="animation-delay: '.$delay.'s"><img src="'.$pathThumbs.$fileName.'" alt="Stean Galleriebild '.$loop.'" onclick="showImage(\''.$pathFull.$fileName.'\')" /><p>'.$name.'</p></div>';
 		$loop++;
 	}
 	$output .= "</div>";

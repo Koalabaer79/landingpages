@@ -1,0 +1,75 @@
+@import "./_default.scss";
+
+.insCont {
+	margin: 70px auto 100px auto;
+	max-width: 1000px;
+	width: calc(100%-40px);
+	padding: 0 20px;
+	color: $color-darkGreen;
+	text-align: center;
+
+	h1 {
+		font-family: $font;
+		font-size: 34px;
+		text-align: center;
+	}
+	h2 {
+		font-size: 24px;
+		&.marginTop {
+			margin: 50px;
+		}
+	}
+	p, li {
+		font-size: 18px;
+		a {
+			font-family: $font;
+			color: $color-orange;
+			font-weight: 600;
+		}
+	}
+	li {
+		float: none;
+	}
+
+	.formCont {
+		width: 100%;
+		max-width: 400px;
+		margin: 20px auto 0 auto;
+
+		#error {
+			width: 100%;
+			margin: 10px auto;
+			color: red;
+		}
+
+		.input {
+			width: 100%;
+			& label {
+				width: 100%;
+				font-family: $font;
+				display:inline-block;
+				text-align: left;
+			}
+			& input, & textarea {
+				width: 100%;
+				border-bottom: 1px solid $color-darkGreen;
+				border-top: 1px solid #ffffff;
+				border-left: 1px solid #ffffff;
+				border-right: 1px solid #ffffff;
+				font-family: $font;
+				font-size: 20px;
+				margin-bottom: 20px;
+				outline: 0;
+				box-shadow: 0;
+			}
+	
+			& textarea {
+				height: 300px;
+
+				&:nth-last-child(1) {
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
+}
