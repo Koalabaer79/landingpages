@@ -6,39 +6,26 @@ html(lang="de")
 		meta(name="description",content="")
 		meta(name="keywords",content="")
 		meta(name="viewport",content="width=device-width, initial-scale=1")
-		link(href="./css/style.css",rel="stylesheet",type="text/css")
+		link(href="./css/portrait.css",rel="stylesheet",type="text/css")
 		link(rel="preconnect" href="https://fonts.gstatic.com")
 		link(href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600&display=swap" rel="stylesheet")
 	body(id="body")
 		div(id="container")
 			include ./_shared/nav_de.pug
 
-			//- #header
-			//- 	.imgCont
-			//- 		img.headerImg(src="./assets/stean.jpg")
-			//- 	.titleCont
-			//- 		h1#title Stean - Maine Coon Mix
-			//- 		#headerContent
-			//- 			p Hallo! Mein Name ist Stean und ich bin zu dreiviertel ein Maine Coon. Ich bin jetzt <span id="age"></span> alt und habe es faustdick hinter den Ohren! Meine Hobbies sind Kämpfen, Blödsinn machen, Papa und Mama ärgern, fressen und schlafen. Mein Tag ist nie langweilig. Ich liebe meine Karotte und meinen Kratzbaum - Mama und Papa natürlich auch.
-			//- 			p Ich wachse bilingual auf - zum Glück versteht man das "Miau" in allen Sprachen!
-			//- 			p Ihr seid herzlich willkommen in meinem Leben als Maine Coon Mix! Schaut euch überall um, es gibt viel von mir zu entdecken! Viel Spaß wünsche ich Euch von ganzem Herzen.
-			//- 			p.bold Euer Stean
+			.header#header
+				.imgCont
+					img.headerImg(src="./assets/maine-coon-portrait.jpg")
 
-			//- #content
-			//- 	.contIns
-			//- 		h2 Maine Coon - kurzes Portrait
-			//- 		p Der Ursprung meiner Rasse liegt in den USA. Explizit stammen sie aus dem Bundesstaat Maine, welches sich in den Rassennamen eingepflegt hat. Es wurde behauptet, dass Maine Coons eine Mischung aus Katze und Waschbär sind, also eine Racoon-Cat - doch dass ist schon aus biologischer Sicht unmöglich. Bei manchen Katzen oder Katern jedoch ist das Fellmuster ähnlich und deshalb kam wohl der Eindruck auf, es handle sich um eben diesen Mix.
-			//- 		p Es gibt noch viel mehr Details über meine Rasse zu wissen! Wenn du mehr über Maine Coons lesen möchtest, dann informiere dich auf der Portrait-Seite. Klick einfach auf den Button!
-			//- 		.buttonCont
-			//- 			a.button(href="#") mehr Infos
-			//- 	.contIns
-			//- 		h2 Interessante Fakten
-			//- 		p Es gibt eine Reihe interessanter Fakten zu Maine Coon Katzen und Katern. Zum Beispiel sind wir die größten Hauskatzen auf der Welt. Zu welcher Rasse gehörte die erste Show-Katze in Amerika, die je bei einer Ausstellung ausgestellt wurden? Oder möchtest du wissen, welche Katzen-Rasse als erster Klon der Welt gilt? Zahlreiche Legenden und Mythen und ranken sich um meine Rasse und es gibt auch dazu viel zu erklären!
-			//- 		p Die Infos gibt es überall im Netz, doch warum nicht einen kurzen Blick auf meine Zusammenfassung werfen? Diese erreichst du über den folgenden Button, klick einfach drauf!
-			//- 		.buttonCont
-			//- 			a.button(href="#") zu den Fakten
+			.contFull.whiteBG
+				.contIns#indexCont1
+					h1 Maine Coon Portrait - sanfte Riesen
+					p Lasst mich ein wenig über meine Rasse erzählen. Mein Ursprung liegt in den USA, wo die ersten Katzen meiner Art in dem Bundesstaat <b>Maine</b>, der im Nordosten des Landes liegt. Dies ist offensichtlich dann auch ein Teil des Namens. Der zweite Teil „<i>coon</i>“ hat angeblich seine Wurzeln in dem Wort „Racoon“, was auf Englisch „Waschbär“ heißt. Die in Nordamerika heimischen Tiere sind ebenfalls groß und haben ein mittellanges Fell. Doch das sind alles nur Spekulationen, denn es gibt keinen Beweis, dass wir wirklich von einem Racoon abstammen. 
+					p Wahrscheinlich wurden wir aus Europa oder Kleinasien mit den ersten Einwanderern mitgebracht.  Die ersten Informationen zu einem Maine Coon gab es schon um 1850 auf landwirtschaftlichen Messen. Wir werden auch „working cats“ genannt, weil wir auf diversen Farmen zur Mäuse- und Kleintierjagt eingesetzt wurden. Da es im nördlichen Teil von den USA im Winter sehr kalt werden kann, ist ein dichtes und kräftiges Fell sehr hilfreich.
+					p Uns nennt man die sanften Riesen, weil wir unter anderem sehr groß werden können. Es gibt vereinzelt Exemplare, die 12kg und 120cm länge erreichen können. Das ist aber biologisch gesehen nicht wirklich gesund. Doch normalerweise sind Kater zwischen 5,5 und 9 Kilo, Katzen hingegen „nur“ 4 bis 6,5 Kilogramm. Die kantige Kopfform, die spitz zulaufenden Ohren mit Haarbüscheln und sehr markanten Augen passen zu dem Image einer Riesenkarze.
             
 			include ./_shared/footer_de.pug
 
 
 script(src="./js/menu.js")
+script(src="./js/dropdown.js")

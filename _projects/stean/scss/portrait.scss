@@ -1,0 +1,21 @@
+@import "./_default.scss";
+
+#container {
+	position: relative;
+}
+
+.header {
+	background-color: $color-lightGreen;
+    .imgCont {
+		padding: 0;
+		width: 100%;
+
+		.headerImg {
+			display: block;
+			margin: 0 auto;
+			width: 100%;
+			height: auto;
+			max-width: 1000px;
+		}
+    }
+}
