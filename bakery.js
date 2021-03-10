@@ -27,6 +27,10 @@ if(checkProject(distFolder) === true) {
                 if(key.includes('.html')){
                     htmlFiles.push(key);
                     htmlCount++;
+				}				
+                if(key.includes('.php')){
+                    htmlFiles.push(key);
+                    htmlCount++;
                 }
             }
         }
@@ -46,7 +50,7 @@ if(checkProject(distFolder) === true) {
         // Create export folder and files
         var t2 = performance.now();        
         var dateTime = timeStamp();
-        createFiles(path,compiledFiles,dateTime);
+        createFiles(compiledFiles,dateTime);
         var t3 = performance.now();
         var tComplete_2 = (t3-t2);
         tComplete_2 = Math.round(tComplete_2 * 100) / 100
@@ -139,7 +143,7 @@ function replaceContent(data,files) {
                 }
 
                 // If it is "JS" file
-                if(key.includes('.js')) {
+                if(key.includes('.js') && !key.includes("jquery")) {
                     newKey = key.replace('-min', "");
                     var tag = '<script src="./js/'+newKey+'"></script>';
                     if(content.includes(tag)) {
@@ -163,7 +167,7 @@ function readFilesSync(dir) {
 		count = filename.split('.').length;
 		if(filename !== '.DS_Store') {
 			extension = filename.split('.')[count-1];
-			if(extension === 'html') {
+			if(extension === 'html' || extension === 'php') {
 				var content = fs.readFileSync(dir+filename, 'utf8');
 				files[filename] = content;
 			}
@@ -189,13 +193,13 @@ function readFilesSync(dir) {
 }
 
 // Create new "HTML" files in export folder
-function createFiles(path,data,timeStamp){
-    var dir = projectFolder + '/_export';
+function createFiles(data,timeStamp){
+    var dir = projectFolder + '_export';
     var exportPath = dir + '/' + timeStamp + '/';
     if (!fs.existsSync(dir)){
         fs.mkdirSync(dir);
     }
-    fs.mkdirSync(dir +'/'+ timeStamp);
+    fs.mkdirSync(exportPath);
     for (var key in data) {
         if (data.hasOwnProperty(key)) {
             fs.writeFile(exportPath+key, data[key].toString(), function (err) {

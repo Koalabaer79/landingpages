@@ -4,47 +4,80 @@ function checkEmail() {
 	var reg = "";
 	var errors = 0;
 	var msg = "";
-	var errorMsg = "";
-	var errorDom = document.getElementById('error');
 
 	elements.forEach( function(elem) {
 		domElem = document.getElementById(elem);
+		var errorDom = document.getElementById('error'+elem);
 		switch(elem){
 			case "email":
 				reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
-				msg = "<p>Bitte trage deine richtige Email ein!</p>";
+				msg = "Bitte trage <b>deine</b> richtige Email ein!";
 				break;
 			case "name":
-				reg = /^[a-z ,.'-]+$/;
-				msg = "<p>Bitte trage deinen richtigen Namen ohne Sonderzeichen ein!</p>";
+				reg = /^[a-zA-Z ,.'-]+$/;
+				msg = "Bitte einen Namen ohne Sonderzeichen eintragen!";
 				break;
 			case "anliegen":
-				reg = /^[a-z ,.'-!?$§&/"()=ß*+#]+$/;
-				msg = "<p>Dein Anliegen sollte keine Sonderzeichen '< >' enthalten.</p>";
+				reg = /^[0-9a-zA-Z '-,.ß!?$§&()#"+\-*\r\n]+$/;
+				msg = "Dein Anliegen sollte keine Sonderzeichen '< >' enthalten.";
 				break;
 		}
 
-		if(validateContent(domElem.value, reg) === false) {
-			setBorders(domElem);
-			errorMsg += msg;
-			errors++;
+		if(domElem.value !== "" ) {
+			if (reg.test(domElem.value) === false) {
+				if(domElem.classList.contains('normal')) {
+					domElem.classList.remove('normal');
+				}
+				domElem.classList.add('fehler');
+				errorDom.innerHTML = msg;
+				errors++;
+			}else{
+				if(domElem.classList.contains('fehler')) {
+					domElem.classList.remove('fehler');
+				}
+				domElem.classList.add('normal');
+				errorDom.innerHTML = "";
+			}
 		}else{
-			unsetBorders(domElem);
+			if(domElem.classList.contains('normal')) {
+				domElem.classList.remove('normal');
+			}
+			domElem.classList.add('fehler');
+			errorDom.innerHTML = msg;
+			errors++;
 		}
 	});
 
-	errorDom.innerHTML = errorMsg;
+	if(document.getElementById('dsgvo').checked !== true) {
+		document.getElementById('errordsgvo').innerHTML = "Bitte akzeptiere die Datenschutzbestimmungen.";
+		errors++;
+	}else{
+		document.getElementById('errordsgvo').innerHTML = "";
+	}
+	
+	if(errors === 0){
+		sendEmail(elements);
+	}
+	
 }
 
-function validateContent(content, reg) {
-	console.log(reg);
-	if(content !== "" ) {
-		if (reg.test(content) === false) {
-			return false;
-		}
-		return true;
-	}
-	return false;
+function sendEmail(elements) {
+	console.log("SENDING!");
+	$("form").on("submit", function() {
+		$.ajax({
+			type: 'POST',
+			url: './assets/php/email/sendEmail.php',
+			data: $( this ).serialize(),
+			success: function() {
+				document.getElementById('success').innerHTML = "Danke für deine Email, ich melde mich schnellstmögich!";
+				elements.forEach( function(elem) {
+					domElem = document.getElementById(elem);
+					domElem.value = "";
+					document.getElementById('dsgvo').checked = false;
+				});
+			}
+		});
+	});
 }
 
 function unsetBorders(el) {
