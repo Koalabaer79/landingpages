@@ -1,8 +1,13 @@
 doctype html
+
+- var backgroundImg = "../assets/maine-coon-portrait.jpg'";
+- var title = "Maine Coon Portrait - sanfte Riesen";
+include ./_shared/variables.pug
+
 html(lang="de")
 	head
 		meta(charset="utf-8")
-		title Portrait - Maine Coon
+		title!= title
 		meta(name="description",content="")
 		meta(name="keywords",content="")
 		meta(name="viewport",content="width=device-width, initial-scale=1")
@@ -12,17 +17,24 @@ html(lang="de")
 	body(id="body")
 		div(id="container")
 			include ./_shared/nav_de.pug
-
-			.header#header
-				.imgCont
-					img.headerImg(src="./assets/maine-coon-portrait.jpg")
+			include ../../_modules/fullPicHeader/fullPicHeader.pug
 
 			.contFull.whiteBG
 				.contIns#indexCont1
-					h1 Maine Coon Portrait - sanfte Riesen
+					h2!= title
 					p Lasst mich ein wenig über meine Rasse erzählen. Mein Ursprung liegt in den USA, wo die ersten Katzen meiner Art in dem Bundesstaat <b>Maine</b>, der im Nordosten des Landes liegt. Dies ist offensichtlich dann auch ein Teil des Namens. Der zweite Teil „<i>coon</i>“ hat angeblich seine Wurzeln in dem Wort „Racoon“, was auf Englisch „Waschbär“ heißt. Die in Nordamerika heimischen Tiere sind ebenfalls groß und haben ein mittellanges Fell. Doch das sind alles nur Spekulationen, denn es gibt keinen Beweis, dass wir wirklich von einem Racoon abstammen. 
 					p Wahrscheinlich wurden wir aus Europa oder Kleinasien mit den ersten Einwanderern mitgebracht.  Die ersten Informationen zu einem Maine Coon gab es schon um 1850 auf landwirtschaftlichen Messen. Wir werden auch „working cats“ genannt, weil wir auf diversen Farmen zur Mäuse- und Kleintierjagt eingesetzt wurden. Da es im nördlichen Teil von den USA im Winter sehr kalt werden kann, ist ein dichtes und kräftiges Fell sehr hilfreich.
 					p Uns nennt man die sanften Riesen, weil wir unter anderem sehr groß werden können. Es gibt vereinzelt Exemplare, die 12kg und 120cm länge erreichen können. Das ist aber biologisch gesehen nicht wirklich gesund. Doch normalerweise sind Kater zwischen 5,5 und 9 Kilo, Katzen hingegen „nur“ 4 bis 6,5 Kilogramm. Die kantige Kopfform, die spitz zulaufenden Ohren mit Haarbüscheln und sehr markanten Augen passen zu dem Image einer Riesenkarze.
+			
+			.contHalf.greenBG
+				.contIns#indexCont2
+					h2 HALLO ECHO
+					p Uns nennt man die sanften Riesen, weil wir unter anderem sehr groß werden können. Es gibt vereinzelt Exemplare, die 12kg und 120cm länge erreichen können. Das ist aber biologisch gesehen nicht wirklich gesund. Doch normalerweise sind Kater zwischen 5,5 und 9 Kilo, Katzen hingegen „nur“ 4 bis 6,5 Kilogramm. Die kantige Kopfform, die spitz zulaufenden Ohren mit Haarbüscheln und sehr markanten Augen passen zu dem Image einer Riesenkarze.
+				.contIns#indexCont3
+					h2 HALLO OTTO
+					p Uns nennt man die sanften Riesen, weil wir unter anderem sehr groß werden können. Es gibt vereinzelt Exemplare, die 12kg und 120cm länge erreichen können. Das ist aber biologisch gesehen nicht wirklich gesund. Doch normalerweise sind Kater zwischen 5,5 und 9 Kilo, Katzen hingegen „nur“ 4 bis 6,5 Kilogramm. Die kantige Kopfform, die spitz zulaufenden Ohren mit Haarbüscheln und sehr markanten Augen passen zu dem Image einer Riesenkarze.
+					p Uns nennt man die sanften Riesen, weil wir unter anderem sehr groß werden können. Es gibt vereinzelt Exemplare, die 12kg und 120cm länge erreichen können. Das ist aber biologisch gesehen nicht wirklich gesund. Doch normalerweise sind Kater zwischen 5,5 und 9 Kilo, Katzen hingegen „nur“ 4 bis 6,5 Kilogramm. Die kantige Kopfform, die spitz zulaufenden Ohren mit Haarbüscheln und sehr markanten Augen passen zu dem Image einer Riesenkarze.
+
             
 			include ./_shared/footer_de.pug
 

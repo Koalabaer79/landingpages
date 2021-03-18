@@ -53,6 +53,9 @@ gulp.task('pug', function() {
     if(fs.existsSync(projectFolder) && projectFolder.includes('_projects')){
         return gulp.src(projectFolder+'/pug/*.pug')
 			.pipe(pug())
+			.pipe(rename({
+				extname: '.html'
+			}))
             .pipe(gulp.dest(projectFolder+'/_dist/'))
             .pipe(browserSync.stream());
     }else{
@@ -86,7 +89,7 @@ gulp.task('browserSync', function() {
     var routePage = directFolder+'/_dist/';
     browserSync.init({
         startPath: routePage,
-        proxy: 'localhost:3000',
+        proxy: 'localhost:8888',
         browser: "google chrome"
     })
     if(name == undefined){

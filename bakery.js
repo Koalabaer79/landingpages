@@ -152,7 +152,7 @@ function replaceContent(data,files) {
                     }
                 }
 
-                content = content.replace('../', "./");
+                content = content.replace("../", "./");
             }
         }
         compiledFiles[file] = content;
