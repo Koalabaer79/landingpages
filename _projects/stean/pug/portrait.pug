@@ -1,6 +1,6 @@
 doctype html
 
-- var backgroundImg = "../assets/maine-coon-portrait.jpg'";
+- var backgroundImg = "../assets/pagePics/maine-coon-portrait.jpg'";
 - var title = "Maine Coon Portrait - sanfte Riesen";
 include ./_shared/variables.pug
 
@@ -19,25 +19,50 @@ html(lang="de")
 			include ./_shared/nav_de.pug
 			include ../../_modules/fullPicHeader/fullPicHeader.pug
 
-			.contFull.whiteBG
-				.contIns#indexCont1
-					h2!= title
-					p Lasst mich ein wenig über meine Rasse erzählen. Mein Ursprung liegt in den USA, wo die ersten Katzen meiner Art in dem Bundesstaat <b>Maine</b>, der im Nordosten des Landes liegt. Dies ist offensichtlich dann auch ein Teil des Namens. Der zweite Teil „<i>coon</i>“ hat angeblich seine Wurzeln in dem Wort „Racoon“, was auf Englisch „Waschbär“ heißt. Die in Nordamerika heimischen Tiere sind ebenfalls groß und haben ein mittellanges Fell. Doch das sind alles nur Spekulationen, denn es gibt keinen Beweis, dass wir wirklich von einem Racoon abstammen. 
-					p Wahrscheinlich wurden wir aus Europa oder Kleinasien mit den ersten Einwanderern mitgebracht.  Die ersten Informationen zu einem Maine Coon gab es schon um 1850 auf landwirtschaftlichen Messen. Wir werden auch „working cats“ genannt, weil wir auf diversen Farmen zur Mäuse- und Kleintierjagt eingesetzt wurden. Da es im nördlichen Teil von den USA im Winter sehr kalt werden kann, ist ein dichtes und kräftiges Fell sehr hilfreich.
-					p Uns nennt man die sanften Riesen, weil wir unter anderem sehr groß werden können. Es gibt vereinzelt Exemplare, die 12kg und 120cm länge erreichen können. Das ist aber biologisch gesehen nicht wirklich gesund. Doch normalerweise sind Kater zwischen 5,5 und 9 Kilo, Katzen hingegen „nur“ 4 bis 6,5 Kilogramm. Die kantige Kopfform, die spitz zulaufenden Ohren mit Haarbüscheln und sehr markanten Augen passen zu dem Image einer Riesenkarze.
+			.colorCont.whiteBG
+				.contFull
+					.contIns#portraitCont1
+						.icoCont
+							img.icon(src="./assets/icons/portrait.png" alt="Maine Coon Portrait")
+						h2!= title
+						p Lasst mich ein wenig über meine Rasse erzählen. Mein Ursprung liegt in den USA, wo die ersten Katzen meiner Art in dem Bundesstaat <b>Maine</b>, der im Nordosten des Landes liegt. Dies ist offensichtlich dann auch ein Teil des Namens. Der zweite Teil „<i>coon</i>“ hat angeblich seine Wurzeln in dem Wort „Racoon“, was auf Englisch „Waschbär“ heißt. Die in Nordamerika heimischen Tiere sind ebenfalls groß und haben ein mittellanges Fell. Doch das sind alles nur Spekulationen, denn es gibt keinen Beweis, dass wir wirklich von einem Racoon abstammen. 
+						p Wahrscheinlich wurden wir aus Europa oder Kleinasien mit den ersten Einwanderern mitgebracht.  Die ersten Informationen zu einem Maine Coon gab es schon um 1850 auf landwirtschaftlichen Messen. Wir werden auch „working cats“ genannt, weil wir auf diversen Farmen zur Mäuse- und Kleintierjagt eingesetzt wurden. Da es im nördlichen Teil von den USA im Winter sehr kalt werden kann, ist ein dichtes und kräftiges Fell sehr hilfreich.
+						p Uns nennt man die sanften Riesen, weil wir unter anderem sehr groß werden können. Es gibt vereinzelt Exemplare, die 12kg und 120cm länge erreichen können. Das ist aber biologisch gesehen nicht wirklich gesund. Doch normalerweise sind Kater zwischen 5,5 und 9 Kilo, Katzen hingegen „nur“ 4 bis 6,5 Kilogramm. Die kantige Kopfform, die spitz zulaufenden Ohren mit Haarbüscheln und sehr markanten Augen passen zu dem Image einer Riesenkarze.
 			
-			.contHalf.greenBG
-				.contIns#indexCont2
-					h2 HALLO ECHO
-					p Uns nennt man die sanften Riesen, weil wir unter anderem sehr groß werden können. Es gibt vereinzelt Exemplare, die 12kg und 120cm länge erreichen können. Das ist aber biologisch gesehen nicht wirklich gesund. Doch normalerweise sind Kater zwischen 5,5 und 9 Kilo, Katzen hingegen „nur“ 4 bis 6,5 Kilogramm. Die kantige Kopfform, die spitz zulaufenden Ohren mit Haarbüscheln und sehr markanten Augen passen zu dem Image einer Riesenkarze.
-				.contIns#indexCont3
-					h2 HALLO OTTO
-					p Uns nennt man die sanften Riesen, weil wir unter anderem sehr groß werden können. Es gibt vereinzelt Exemplare, die 12kg und 120cm länge erreichen können. Das ist aber biologisch gesehen nicht wirklich gesund. Doch normalerweise sind Kater zwischen 5,5 und 9 Kilo, Katzen hingegen „nur“ 4 bis 6,5 Kilogramm. Die kantige Kopfform, die spitz zulaufenden Ohren mit Haarbüscheln und sehr markanten Augen passen zu dem Image einer Riesenkarze.
-					p Uns nennt man die sanften Riesen, weil wir unter anderem sehr groß werden können. Es gibt vereinzelt Exemplare, die 12kg und 120cm länge erreichen können. Das ist aber biologisch gesehen nicht wirklich gesund. Doch normalerweise sind Kater zwischen 5,5 und 9 Kilo, Katzen hingegen „nur“ 4 bis 6,5 Kilogramm. Die kantige Kopfform, die spitz zulaufenden Ohren mit Haarbüscheln und sehr markanten Augen passen zu dem Image einer Riesenkarze.
-
+			.colorCont.greenBG
+				#portraitCont2.contFull.noBottom
+					.icoCont
+						img.icon(src="./assets/icons/zufrieden.png" alt="Maine Coon Steckbrief")
+					h2.center Steckbrief
+				#portraitCont3.contHalf.noTop
+					.contIns.noTopIns
+						p <span class="bold">Rasse:</span><br />Maine Coon 
+						p <span class="bold">Herkunft:</span><br />USA, Bundesstaat Maine
+						p <span class="bold">Größe:</span><br />groß bis sehr groß, bis zu 120cm Länge und 40cm Schulterhöhe 
+						p <span class="bold">Gewicht:</span><br />Katze von 4,5 bis 6 Kilogramm, Kater von 5,5 bis 9 Kilogramm
+						p <span class="bold">Körper:</span><br />robust, muskulös, breiter Brustkorb, lang gestreckter Körper, buschiger Schwanz
+					.contIns.noTopIns
+						p <span class="bold">Augen:</span><br />grüne, goldene oder kupferfarbene, sehr große Augen, welche einen leicht fremdländischen Eindruck vermitteln
+						p <span class="bold">Fell und Farbe:</span><br />halblanges Haar, am Bauch und Hinterbeinen sogar langes Haar, einen Langhaarkragen am Brustkorb, weiche Unterwolle die vor Wasser schützen - verfilzt kaum<br />Alle Farben sind erlaubt, außer Golden
+						p <span class="bold">Charakter:</span><br />intelligent, verspielt, anhänglich, gesellig und sanftmütig
+						p <span class="bold">Besonderheiten:</span><br />kann durch Überzüchtung und auf Grund der enormen Größe Probleme mit Nieren, Gelenken und mit dem Herz haben
+						
+			.colorCont.whiteBG
+				#portraitCont4.contFull
+					.contIns
+						.icoCont
+							img.icon(src="./assets/icons/stark.png" alt="Maine Coon Charakter")
+						h2 Charakter eines Maine Coon
+						p Wir Maine Coons sind sehr menschenbezogene und anhängliche Tiere. Da wir sehr gesellig und freundlich sind, kommen wir wunderbar mit Kindern, anderen Artgenossen und sogar Hunden zurecht.
+						p Ich persönlich spiele sehr gerne und fordere das auch gerne ein - ohne dabei aufdringlich zu werden. Mein Bewegungsdrang kann ausgeprägt sein, und ich muss mich auch etwas bewegen, dann sonst werde ich vielleicht dick und das ist weder für meine Gesundheit noch für meinen muskulösen Körper gut. Aber ich zerstöre nicht die ganze Wohnung während des Spielens - hauptsache die mein Lebensraum ist nicht zu klein dimensioniert.
+						p Ein Maine Coon ist nicht nur sehr gut als "Working-Cat" auf amerikanischen Farmen zur Jagt von Mäusen und Ratten geeignet, wir sind auch sehr intelligent und lernen schnell. Einen Wasserhahn oder Türen öffnen zählen zu meinen leichtesten Disziplinen. Wenn ich will, kann ich auch ein Hund sein und apportieren!
+						p Das Schmusen gehört neben all den anderen Aktivitäten ebenfalls zu meinen Lieblingsbeschäftigungen, denn ich mag es ausgiebig gekrault und geliebt zu werden. Das gebe ich dann auch mit gleicher Münze zurück!
+						p Ach so, und bitte nicht wundern: es kann möglich sein, dass ich hier und da anfange intensiv zu quasseln und sabbeln, denn Kommunikation läuft bei mir nicht nur über Gesten. Ich möchte auch immer gerne mal erzählen, was mir auf dem Herzen liegt und quatsche dann mit meinen Dosenöffnern.
             
 			include ./_shared/footer_de.pug
 
 
 script(src="./js/menu.js")
 script(src="./js/dropdown.js")
+script(src="./js/portrait.js")
+script(src="./js/viewport.js")
