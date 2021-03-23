@@ -1,1 +1,0 @@
-function dropdown(){var e=document.getElementById("navItems");"0px"===e.style.height||""===e.style.height?e.style.height="315px":e.style.height="0px"}function resizeFunc(){el=document.getElementById("navItems"),width=window.innerWidth,width<=700?el.style.height="0px":el.style.height="50px"}window.addEventListener("resize",resizeFunc);

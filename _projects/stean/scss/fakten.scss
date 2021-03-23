@@ -1,0 +1,12 @@
+@import "./_default.scss";
+@import "./_variables.scss";
+@import "../../_modules/fullPicHeader/fullPicHeader.scss";
+
+#faktenCont1, #faktenCont2, #faktenCont3, #faktenCont4, #faktenCont5, #faktenCont6, #faktenCont7, #faktenCont8, #faktenCont9, #faktenCont10, #faktenCont11, #faktenCont12, #faktenCont13, #faktenCont14 {
+	opacity: 0;
+}
+
+.orange {
+	color: $color-orange;
+	text-shadow: 1px 1px 0 $color-darkGreen;
+}

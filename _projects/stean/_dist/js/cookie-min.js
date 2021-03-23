@@ -1,1 +1,0 @@
-function setCookie(){var e=new Date;e.setTime(e.getTime()+6048e5);var o="expires="+e.toUTCString();document.cookie="site=visited; "+o,document.getElementById("cookie").style.display="none"}var myCookie=document.cookie.indexOf("site=");document.getElementById("cookie").style.display=myCookie<0?"block":"none";
