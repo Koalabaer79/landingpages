@@ -1,6 +1,8 @@
 @import "./_default.scss";
+@import "./_variables.scss";
+@import "../../_modules/fullPicHeader/fullPicHeader.scss";
 
-.header {
+.title {
 	width: 100%;
 	margin: 0;
 	padding: 30px 0;
@@ -13,12 +15,6 @@
 		width: calc(100% - 60px);
 		text-align: center;
 		margin: 0 auto;
-		h1 {
-			font-size: 34px;
-			display: block;
-			width: 100%;
-			font-weight: 600;
-		}
 		p {
 			font-size: 24px;
 			display: block;
@@ -29,32 +25,11 @@
 		@media screen and (max-width:600px){
 			padding: 30px 20px;
 			width: calc(100% - 40px);
-			h1 {
-				font-size: 7vw;
-			}
 			p {
 				font-size: 5vw;
 			}
 		}
 	}
-
-    .imgCont {
-		padding: 30px 30px 0 30px;
-		width: calc(100% - 60px);
-
-		@media screen and (max-width:600px){
-			padding: 30px 0 0 0;
-			width: 100%;		
-		}
-
-		.headerImg {
-			display: block;
-			margin: 0 auto;
-			width: 100%;
-			height: auto;
-			max-width: 420px;
-		}
-    }
 }
 
 .contGal, .contInsta, .imagesCont  {
@@ -179,6 +154,6 @@
 	}
 }
 
-#headerImg, #headerText , #indexCont1, #indexCont2, #indexCont3, #indexCont4, #indexCont5 {
+#headerText , #indexCont1, #indexCont2, #indexCont3, #indexCont4, #indexCont5 {
 	opacity: 0;
 }

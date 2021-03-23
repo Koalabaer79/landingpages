@@ -1,4 +1,9 @@
 doctype html
+
+- var backgroundImg = "../assets/pagePics/titlePic.jpg'";
+- var title = "Stean - Maine Coon Mix";
+include ./_shared/variables.pug
+
 html(lang="de")
 	head
 		title Stean - Maine Coon Mix
@@ -13,19 +18,19 @@ html(lang="de")
 	body(id="body")
 		div(id="container")
 			include ./_shared/nav_de.pug
+			include ../../_modules/fullPicHeader/fullPicHeader.pug
 
-			#indexHeader.header
-				#headerImg.imgCont.fadeIn
-					img.headerImg(src="./assets/stean.jpg" alt="Stean - Maine Coon Mix")
+			#indexHeader.title
+				//- #headerImg.imgCont.fadeIn
+				//- 	img.headerImg(src="./assets/stean.jpg" alt="Stean - Maine Coon Mix")
 				#headerText.titleCont
-					h1#title Stean - Maine Coon Mix
 					#headerContent
 						p Hallo! Mein Name ist Stean und ich bin zu dreiviertel ein Maine Coon. Ich bin jetzt <span id="age"></span> alt und habe es faustdick hinter den Ohren! Meine Hobbies sind Kämpfen, Blödsinn machen, Papa und Mama ärgern, fressen und schlafen. Mein Tag ist nie langweilig. Ich liebe meine Karotte und meinen Kratzbaum - Mama und Papa natürlich auch.
 						p Ich wachse bilingual auf - zum Glück versteht man das "Miau" in allen Sprachen!
 						p Ihr seid herzlich willkommen in meinem Leben als Maine Coon Mix! Schaut euch überall um, es gibt viel von mir zu entdecken! Viel Spaß wünsche ich Euch von ganzem Herzen.
 						p.bold Euer Stean
 
-			.contHalf.whiteBG
+			.contHalf.
 				.contIns#indexCont1
 					.icoCont
 						img.icon(src="./assets/icons/portrait.png" alt="Maine Coon Portrait")
@@ -49,7 +54,7 @@ html(lang="de")
 				.buttonCont
 					a.button(href="gallerie.php" title="direkt zu Stean Gallerie") Zur Gallerie
 				
-			.contFull.whiteBG
+			.contFull.
 				.contIns#indexCont5
 					.icoCont
 						img.icon(src="./assets/icons/fragen.png" alt="Stean in den Social-Media")
