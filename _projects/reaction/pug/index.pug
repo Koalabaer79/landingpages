@@ -1,0 +1,22 @@
+doctype html
+html(lang="de")
+	head
+		meta(charset="utf-8")
+		title Landing Page
+		meta(name="description",content="Add description here")
+		meta(name="keywords",content="Add, keywords, here")
+		meta(name="viewport",content="width=device-width, initial-scale=1")
+		link(href="./css/style.css",rel="stylesheet",type="text/css")
+		script(src="./js/functions.js")
+	body(id="body")
+		div(id="container")            
+			include ./_shared/menu.pug
+
+			#startCont(onClick="startGame()")
+				#start Start
+			#waitCont(onClick="failReaction()")
+				#wait Wait for green color
+			#greenCont(onClick="getReaction()")
+				#green Click to measure your reaction
+			#resultCont(onClick="startGame()")
+				#result
