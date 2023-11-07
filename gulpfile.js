@@ -1,15 +1,16 @@
 var gulp = require('gulp');
-var sass = require('gulp-sass');
+var sass = require('gulp-sass')(require('sass'));
 var pug = require('gulp-pug');
 var rename = require('gulp-rename');
 const minify = require('gulp-minify');
 var colors = require('colors');
 const fs = require('fs');
 var browserSync = require('browser-sync').create();
-// var path = require('path');
+var path = require('path');
 
 // Local Variables
 var projectFolder = process.env.INIT_CWD;
+path.normalize(projectFolder);
 var directFolder = projectFolder.split("htdocs")[1];
 var name = process.argv[4];
 var template = process.argv[6];
@@ -24,7 +25,7 @@ gulp.task('sass', function() {
         var sassFiles = projectFolder+'/scss/*.scss';
         var cssDest = projectFolder+'/_dist/css/';
         return gulp.src(sassFiles)
-            .pipe(sass.sync({outputStyle: 'compressed'}).on('error', sass.logError))
+            .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
             .pipe(gulp.dest(cssDest))
             .pipe(browserSync.stream());
     }
@@ -89,8 +90,8 @@ gulp.task('browserSync', function() {
     var routePage = directFolder+'/_dist/';
     browserSync.init({
         startPath: routePage,
-        proxy: 'localhost:8888',
-        browser: "google chrome"
+        proxy: 'localhost',
+        browser: "chrome"
     })
     if(name == undefined){
         var file = 'index.html';
@@ -104,15 +105,15 @@ gulp.task('browserSync', function() {
     gulp.watch(process.env.INIT_CWD+'/js/*.js', gulp.series('js')).on('change', browserSync.reload);
     gulp.watch(process.env.INIT_CWD+'/assets/**/*.*', gulp.series('copy')).on('change', browserSync.reload);
     gulp.watch(process.env.INIT_CWD+'/_dist/'+file).on('change', browserSync.reload);
-    console.log(colors.green(' Watching '+file));
+    console.log(colors.green('Watching '+routePage+''+file));
 });
 
 gulp.task('browserSync-php', function() {
     var routePage = directFolder+'/_dist/';
     browserSync.init({
         startPath: routePage,
-        proxy: 'localhost:8888',
-        browser: "google chrome"
+        proxy: 'localhost',
+        browser: "chrome"
     })
     if(name == undefined){
         var file = 'index.php';
@@ -126,7 +127,7 @@ gulp.task('browserSync-php', function() {
     gulp.watch(process.env.INIT_CWD+'/js/*.js', gulp.series('js')).on('change', browserSync.reload);
     gulp.watch(process.env.INIT_CWD+'/assets/**/*.*', gulp.series('copy')).on('change', browserSync.reload);
     gulp.watch(process.env.INIT_CWD+'/_dist/'+file).on('change', browserSync.reload);
-    console.log(colors.green(' Watching '+file));
+    console.log(colors.green('Watching '+routePage+''+file));
 });
 
 // Watch HTML Project -> including SASS, PUG and BROWSERSYNC Tasks

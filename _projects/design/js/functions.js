@@ -148,6 +148,7 @@ function validateForm() {
     const formEl = { name: document.forms["contactform"]["name"].value, email: document.forms["contactform"]["email"].value, message: document.forms["contactform"]["message"].value }
     var name = document.forms["contactform"]["name"].value;
     var email = document.forms["contactform"]["email"].value;
+    var message = document.forms["contactform"]["message"].value;
     var accept = document.getElementById("confirm");
     for (const [key, value] of Object.entries(formEl)) {
         if(`${value}` == "") {

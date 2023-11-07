@@ -62,7 +62,7 @@ $text_receiver = '<html><head><title>u-php - Kontakt von Website</title><meta na
 </tr>
 </body></html>';
 
-if( mail('urban@u-php.de', $betreff_receiver, $text_receiver, $header_receiver) && mail($email, $betreff_sender, $text_sender, $header_sender) ) {
+if( mail('larsman79@yahoo.de', $betreff_receiver, $text_receiver, $header_receiver) && mail($email, $betreff_sender, $text_sender, $header_sender) ) {
     header('Location: ../index.html?email=success#section5');
 }else {
     echo "ERROR!!!";

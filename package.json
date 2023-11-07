@@ -10,13 +10,16 @@
     "gulp-minify": "^3.1.0",
     "gulp-pug": "^4.0.1",
     "gulp-rename": "^2.0.0",
-    "gulp-sass": "^4.1.0",
+    "node": "^14.21.3",
+    "node-sass": "^4.14.0",
+    "sass": "^1.69.3",
     "tinify": "^1.6.0-beta.2"
   },
   "devDependencies": {
     "@types/jquery": "^3.5.5",
     "gulp-connect-php": "^1.0.3",
     "gulp-minify": "^3.1.0",
+    "gulp-sass": "^5.1.0",
     "tinify": "*"
   },
   "scripts": {
