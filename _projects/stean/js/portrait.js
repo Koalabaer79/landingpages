@@ -1,1 +1,0 @@
-var elements = [ 'portraitCont1', 'portraitCont2', 'portraitCont3', 'portraitCont4' ];
