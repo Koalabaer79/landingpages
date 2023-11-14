@@ -1,11 +1,11 @@
 /node_modules
 node_modules
 
-.DS_Store
-
 _dist/
 _export/
-_projects/cursor/
-_projects/stean/
-_projects/nfl/
-_projects/design/
+cursor/
+stean/
+nfl/
+design/
+
+.DS_Store
