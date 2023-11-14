@@ -5,9 +5,10 @@ var rename = require('gulp-rename');
 const minify = require('gulp-minify');
 var colors = require('colors');
 const fs = require('fs');
-var browserSync = require('browser-sync').create();
+var browserSync = require('browser-sync');
+// var browserSync = require('browser-sync').create();
+var reload = browserSync.reload;
 var path = require('path');
-var changed = require('gulp-changed');
 
 // Local Variables
 var projectFolder = process.env.INIT_CWD;
@@ -27,7 +28,12 @@ gulp.task('sass', function() {
         return gulp.src(sassFiles)
             .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
             .pipe(gulp.dest(cssDest))
-            .pipe(browserSync.stream());
+            // .pipe(browserSync.stream());
+            .pipe(
+              browserSync.reload({
+                stream: true,
+              })
+            );
     }
     else{
         return console.log(colors.redBG('Maybe switch into your current project folder?'));
@@ -43,7 +49,12 @@ gulp.task('pug-php', function() {
 				extname: '.php'
 			}))
             .pipe(gulp.dest(projectFolder+'/_dist/'))
-            .pipe(browserSync.stream());
+            // .pipe(browserSync.stream());
+            .pipe(
+                browserSync.reload({
+                stream: true,
+                })
+            );
     }else{
         return console.log(colors.redBG('Maybe switch into your current project folder?'));
     }
@@ -58,7 +69,12 @@ gulp.task('pug', function() {
 				extname: '.html'
 			}))
             .pipe(gulp.dest(projectFolder+'/_dist/'))
-            .pipe(browserSync.stream());
+            // .pipe(browserSync.stream());
+            .pipe(
+                browserSync.reload({
+                stream: true,
+                })
+            );
     }else{
         return console.log(colors.redBG('Maybe switch into your current project folder?'));
     }
@@ -80,11 +96,28 @@ gulp.task('js', function() {
         return gulp.src(projectFolder+'/js/*.js')
             .pipe(minify())
             .pipe(gulp.dest(projectFolder+'/_dist/js/'))
-            .pipe(browserSync.stream());
+            // .pipe(browserSync.stream());
+            .pipe(
+                browserSync.reload({
+                stream: true,
+                })
+            )
     }else{
         return console.log(colors.redBG('Maybe switch into your current project folder?'));
     }
 });
+
+function browser_sync() {
+    browserSync({
+        server: {
+            baseDir: `${outputDir}/`, // folder where the server starts from
+        },
+        options: {
+            reloadDelay: 250, // time between file save and reload
+        },
+        notify: false,
+    });
+}
 
 gulp.task('browserSync', function() {
     var routePage = directFolder+'/_dist/';
@@ -101,11 +134,11 @@ gulp.task('browserSync', function() {
         var file = name.split('/')[elements-1];
         file = file.replace('pug', 'html');
     }
-    gulp.watch(process.env.INIT_CWD+'/pug/**/*.pug', gulp.task('pug')).on('change', browserSync.reload);
-    gulp.watch(process.env.INIT_CWD+'/scss/*.scss', gulp.task('sass')).on('change', browserSync.reload);
-    gulp.watch(process.env.INIT_CWD+'/js/*.js', gulp.task('js')).on('change', browserSync.reload);
-    gulp.watch(process.env.INIT_CWD+'/assets/**/*.*', gulp.task('copy')).on('change', browserSync.reload);
-    gulp.watch(process.env.INIT_CWD+'/_dist/'+file).on('change', browserSync.reload);
+    gulp.watch(process.env.INIT_CWD+'/pug/**/*.pug', gulp.series('pug')).on('change', reload);
+    gulp.watch(process.env.INIT_CWD+'/scss/*.scss', gulp.series('sass')).on('change', reload);
+    gulp.watch(process.env.INIT_CWD+'/js/*.js', gulp.series('js')).on('change', reload);
+    gulp.watch(process.env.INIT_CWD+'/assets/**/*.*', gulp.series('copy')).on('change', reload);
+    gulp.watch(process.env.INIT_CWD+'/_dist/'+file).on('change', reload);
     console.log(colors.green('Watching '+routePage+''+file));
 });
 
@@ -124,12 +157,18 @@ gulp.task('browserSync-php', function() {
         var file = name.split('/')[elements-1];
         file = file.replace('pug', 'php');
     }
-    gulp.watch(process.env.INIT_CWD+'/pug/**/*.pug', gulp.task('pug-php')).on('change', browserSync.reload);
-    gulp.watch(process.env.INIT_CWD+'/scss/*.scss', gulp.task('sass')).on('change', browserSync.reload);
-    gulp.watch(process.env.INIT_CWD+'/js/*.js', gulp.task('js')).on('change', browserSync.reload);
-    gulp.watch(process.env.INIT_CWD+'/assets/**/*.*', gulp.task('copy')).on('change', browserSync.reload);
-    gulp.watch(process.env.INIT_CWD+'/_dist/'+file).on('change', browserSync.reload);
+    // gulp.watch(process.env.INIT_CWD+'/pug/**/*.pug', gulp.series('pug-php')).on('change', reload);
+    // gulp.watch(process.env.INIT_CWD+'/scss/*.scss', gulp.series('sass')).on('change', reload);
+    // gulp.watch(process.env.INIT_CWD+'/js/*.js', gulp.series('js')).on('change', reload);
+    // gulp.watch(process.env.INIT_CWD+'/assets/**/*.*', gulp.series('copy')).on('change', reload);
+    // gulp.watch(process.env.INIT_CWD+'/_dist/'+file).on('change', reload);
+    watch(process.env.INIT_CWD+'/pug/**/*.pug', gulp.series('pug-php'));
+    watch(process.env.INIT_CWD+'/scss/*.scss', gulp.series('sass'));
+    watch(process.env.INIT_CWD+'/js/*.js', gulp.series('js'));
+    watch(process.env.INIT_CWD+'/assets/**/*.*', gulp.series('copy'));
+    watch(process.env.INIT_CWD+'/_dist/'+file);
     console.log(colors.green('Watching '+routePage+''+file));
+    browser_sync();
 });
 
 // Watch HTML Project -> including SASS, PUG and BROWSERSYNC Tasks
