@@ -5,8 +5,7 @@ node_modules
 
 _dist/
 _export/
-cursor/
-design/
-nfl/
-scrolling/
-stean/
+_projects/cursor/
+_projects/stean/
+_projects/nfl/
+_projects/design/
